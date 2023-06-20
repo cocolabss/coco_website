@@ -14,6 +14,12 @@
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <!-- Scripts needed for the shopping cart function -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <!-- Google fonts-->
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
@@ -68,14 +74,29 @@
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#shopping"
-                >Carrito de compras</a
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#products"
+                >Productos</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact"
                 >Contáctanos</a
               >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1 dropdown">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart"></i> Carrito
+              </a>
+              
+              <!-- Contenido del Carrito -->
+              <div class="dropdown">
+              <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" aria-labelledby="cartDropdown">
+                <h6 class="dropdown-header">Productos en el Carrito</h6>
+                <div class="dropdown-divider"></div>
+                <!-- Aquí van los productos del carrito -->
+                <div id="cartList"></div>
+              </div>
+            </div>
             </li>
           </ul>
         </div>
@@ -305,10 +326,10 @@
       </div>
     </section>
 
-    <!-- Shopping Section-->
-    <section class="page-section bg-primary shopping" id="shopping">
+    <!-- Products Section-->
+    <section class="page-section bg-primary products" id="products">
       <div class="container">
-        <!-- Shopping Section Heading-->
+        <!-- Products Section Heading-->
         <h2
           class="page-section-heading text-center text-uppercase text-dark mb-0"
         >
@@ -320,9 +341,9 @@
           <div class="divider-custom-icon"><i class="fas fa-tag"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-        <!-- Shopping Grid Items-->
+        <!-- Products Grid Items-->
         <div class="row justify-content-center">
-          <!-- Shopping Menu-->
+          <!-- Products Menu-->
           <div class="container">
             <div class="row">
               <div class="col-md-4 col-lg-4 mb-5">
@@ -335,13 +356,6 @@
                         <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Automation')" class="nav-link py-3 px-0 px-lg-3 rounded"><i class="fas fa-robot"></i>   Automatizaciones</a></li>
                         <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('App')" class="nav-link py-3 px-0 px-lg-3 rounded"><i class="fas fa-rocket"></i>   Aplicaciones</a></li>
                       </ul><br>
-                      <div class="container">
-                        <h3 class="text-center">Carrito de Compras</h3>
-                        <div id="cart">
-                          <ul class="list-group text-center bg-primary" id="cartList">
-                          </ul>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -349,42 +363,42 @@
               <div class="col-md-8 col-lg-8 mb-5">
                 <!-- Container content -->
                 <div class="row">
-                  <!-- Shopping  website Item 1-->
+                  <!-- Products  website Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardWebsite">
-                      <img src="assets/img/shopping/website.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Website Image">
+                      <img src="assets/img/products/website.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Website Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Sitio web</h5>
                         <p class="card-text">Descripción sitio web</p>
                         <p class="card-price">$5.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(1,'Sitio web', 5000000);" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
+                        <a href="javascript:void(0);" onclick="addToCart(1,'Sitio web', 5000000,'website.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
                         <br><a href="javascript:void(0);" onclick="removeFromCart(1);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
                       </div>
                     </div>
                   </div>
                   
-                  <!-- Shopping automation Item 1-->
+                  <!-- Products automation Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardAutomation">
-                      <img src="assets/img/shopping/automation.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Automation Image">
+                      <img src="assets/img/products/automation.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Automation Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Automatización</h5>
                         <p class="card-text">Descripción automatización</p>
                         <p class="card-price">$2.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(2, 'Automatización', 2000000);" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
+                        <a href="javascript:void(0);" onclick="addToCart(2, 'Automatización', 2000000,'automation.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
                         <br><a href="javascript:void(0);" onclick="removeFromCart(2);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
                       </div>
                     </div>
                   </div>
-                  <!-- Shopping application Item 1-->
+                  <!-- Products application Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardApp">
-                      <img src="assets/img/shopping/app.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="App Image">
+                      <img src="assets/img/products/app.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="App Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Aplicación</h5>
                         <p class="card-text">Descripción aplicación</p>
                         <p class="card-price">$4.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(3,'Aplicación', 4000000);" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
+                        <a href="javascript:void(0);" onclick="addToCart(3,'Aplicación', 4000000,'app.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
                         <br><a href="javascript:void(0);" onclick="removeFromCart(3);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
                       </div>
                     </div>
@@ -393,7 +407,7 @@
               </div>
             </div>
           </div>
-          
+
       </div>
     </section>
 
@@ -857,10 +871,10 @@
         </div>
       </div>
     </div>
-    <div id="cartAlertWarning" class="alert alert-warning fixed-top" style="display: none;" role="alert">
+    <div id="cartAlertWarning" class="alert alert-warning fixed-bottom" style="display: none;" role="alert">
       <p class="text-center">¡El elemento que desea añadir al carrito de compras ya existe!</p>
     </div>
-    <div id="cartAlertSuccess" class="alert alert-success fixed-top" style="display: none;" role="alert">
+    <div id="cartAlertSuccess" class="alert alert-success fixed-bottom" style="display: none;" role="alert">
       <p class="text-center">¡El elemento se añadió al carrito de compras exitosamente!</p>
     </div>
     <!-- Bootstrap core JS-->

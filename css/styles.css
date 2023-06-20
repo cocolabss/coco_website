@@ -11059,3 +11059,12 @@ li.category:hover,
 li.category:active {
   background-color: #1abc9c; /* Color de fondo al hacer hover */
 }
+
+.custom-dropdown-menu {
+  max-height: 200px; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+}
+.custom-dropdown-menu .dropdown-content {
+  position: static;
+}
+

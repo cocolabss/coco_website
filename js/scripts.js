@@ -68,11 +68,12 @@ function isElementInList(list, elementId) {
   
 
 // Función para agregar un producto al carrito
-function addToCart(itemId, itemName, itemPrice) {
+function addToCart(itemId, itemName, itemPrice, imgUrl) {
   var item = {
     id: itemId,
     name: itemName,
-    price: itemPrice
+    price: itemPrice,
+    imgUrl: imgUrl
   };
   
   response = isElementInList(cartItems, itemId)
@@ -97,8 +98,15 @@ function updateCart() {
       var item = cartItems[i];
   
       // Crear un elemento de lista para mostrar el producto
-      var listItem = document.createElement('li');
-      listItem.innerHTML = item.name + ' - $' + item.price;
+      var listItem = document.createElement('div');
+      listItem.innerHTML = `<div class="mc-sin-pro fix">
+      <p class="text-center">
+      <img class="text-center" style="width: 120px; height: 120px;" src="assets/img/products/`+item.imgUrl+`" alt=""></a>
+      <div class="mc-pro-details fix text-center">
+        `+item.name+' - $'+parseFloat(item.price)+`</p>
+      </div>
+    </div>
+    <div class="dropdown-divider"></div>`;
       cartElement.appendChild(listItem);
   
       total += item.price;
@@ -106,7 +114,7 @@ function updateCart() {
   
     // Mostrar el total del carrito
     var totalElement = document.createElement('div');
-    totalElement.innerHTML = '<br>'+'Total: $' + total;
+    totalElement.innerHTML = `<p class="text-center"><br>`+'Total: $' + total+`</p>`;
     cartElement.appendChild(totalElement);
   }
   
