@@ -52,3 +52,92 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// Productos del carrito
+var cartItems = [];
+
+// Función para validar si ya existe un elemento en una lista
+function isElementInList(list, elementId) {
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].id === elementId) {
+        return true; // El elemento existe en la lista
+      }
+    }
+    return false; // El elemento no existe en la lista
+  }
+  
+
+// Función para agregar un producto al carrito
+function addToCart(itemId, itemName, itemPrice) {
+  var item = {
+    id: itemId,
+    name: itemName,
+    price: itemPrice
+  };
+  
+  response = isElementInList(cartItems, itemId)
+  if (!response) {
+    cartItems.push(item);
+    cartAlert(1)
+  }else{
+    cartAlert(2)
+  }
+  updateCart(); // Actualizar la vista del carrito
+  console.log(cartItems)
+}
+
+// Función para actualizar el carrito
+function updateCart() {
+    var cartElement = document.getElementById('cartList');
+    cartElement.innerHTML = ''; // Limpiar el contenido del carrito
+  
+    var total = 0;
+  
+    for (var i = 0; i < cartItems.length; i++) {
+      var item = cartItems[i];
+  
+      // Crear un elemento de lista para mostrar el producto
+      var listItem = document.createElement('li');
+      listItem.innerHTML = item.name + ' - $' + item.price;
+      cartElement.appendChild(listItem);
+  
+      total += item.price;
+    }
+  
+    // Mostrar el total del carrito
+    var totalElement = document.createElement('div');
+    totalElement.innerHTML = '<br>'+'Total: $' + total;
+    cartElement.appendChild(totalElement);
+  }
+  
+// Función para eliminar un producto del carrito
+function removeFromCart(itemID) {
+    var index = cartItems.findIndex(function(item) {
+      return item.id === itemID;
+    });
+  
+    if (index !== -1) {
+      cartItems.splice(index, 1);
+      updateCart(); // Actualizar la vista del carrito
+    }
+  }
+  
+function cartAlert(path){
+    if (path == 1) {
+        // Obtener la referencia al elemento de la alerta
+        var alertElement = document.getElementById('cartAlertSuccess');
+        alertElement.style.display = 'block';
+        // Ocultar la alerta después de 3 segundos
+        setTimeout(function() {
+        alertElement.style.display = 'none';
+        }, 3000);
+    }else{
+        // Obtener la referencia al elemento de la alerta
+        var alertElement = document.getElementById('cartAlertWarning');
+        alertElement.style.display = 'block';
+        // Ocultar la alerta después de 3 segundos
+        setTimeout(function() {
+        alertElement.style.display = 'none';
+        }, 3000);
+    }
+}

@@ -11044,3 +11044,18 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.image-card{
+  width: auto;
+  height: 200px;
+}
+
+li.category {
+  background-color: #f1f1f1; /* Color de fondo inicial */
+  transition: background-color 0.3s ease; /* Transición suave de 0.3 segundos */
+}
+
+li.category:hover,
+li.category:active {
+  background-color: #1abc9c; /* Color de fondo al hacer hover */
+}
