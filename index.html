@@ -89,14 +89,12 @@
               </a>
               
               <!-- Contenido del Carrito -->
-              <div class="dropdown">
-              <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" aria-labelledby="cartDropdown">
-                <h6 class="dropdown-header">Productos en el Carrito</h6>
-                <div class="dropdown-divider"></div>
-                <!-- Aquí van los productos del carrito -->
-                <div id="cartList"></div>
-              </div>
-            </div>
+                <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu dropdown-menu-sm" aria-labelledby="cartDropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                  <h6 class="dropdown-header">Productos en el Carrito</h6>
+                  <div class="dropdown-divider"></div>
+                  <!-- Aquí van los productos del carrito -->
+                  <div id="cartList"></div>
+                </div>
             </li>
           </ul>
         </div>
@@ -366,7 +364,7 @@
                   <!-- Products  website Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardWebsite">
-                      <img src="assets/img/products/website.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Website Image">
+                      <img src="assets/img/products/website.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="Website Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Sitio web</h5>
                         <p class="card-text">Descripción sitio web</p>
@@ -375,12 +373,12 @@
                         <br><a href="javascript:void(0);" onclick="removeFromCart(1);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
                       </div>
                     </div>
-                  </div>
+                  </div>                  
                   
                   <!-- Products automation Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardAutomation">
-                      <img src="assets/img/products/automation.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="Automation Image">
+                      <img src="assets/img/products/automation.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="Automation Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Automatización</h5>
                         <p class="card-text">Descripción automatización</p>
@@ -390,10 +388,11 @@
                       </div>
                     </div>
                   </div>
+                  
                   <!-- Products application Item 1-->
                   <div class="col-md-6 col-lg-6 mb-5">
                     <div class="card" style="display: none;" id="cardApp">
-                      <img src="assets/img/products/app.jpg" class="card-img-top" style="width: 352px;height: 200px;" alt="App Image">
+                      <img src="assets/img/products/app.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="App Image">
                       <div class="card-body text-center">
                         <h5 class="card-title">Aplicación</h5>
                         <p class="card-text">Descripción aplicación</p>
@@ -403,6 +402,7 @@
                       </div>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -421,18 +421,81 @@
         <!-- Icon Divider-->
         <div class="divider-custom divider-dark">
           <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-cloud"></i></div>
+          <div class="divider-custom-icon"><i class="fas fa-envelope"></i></div>
           <div class="divider-custom-line"></div>
         </div>
         <!-- About Section Content-->
         <div class="row">
           <div class="col-lg-12 ms-auto">
-            <p class="lead">
+            <p class="lead text-center">
               Escríbenos para que alguien de nuestro equipo de expertos
               altamente calificados puedan brindarte soluciones.
-            </p>
+            </p><br>
           </div>
           <!-- Put contact form here -->
+          <div class="row">
+            <div class="col-lg-8 bg-primary p-4 rounded">
+              <form>
+                <!-- 2 column grid layout with text inputs for the first name and email -->
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div class="form-outline">
+                      <label class="form-label" for="name">¿Cuál es tu nombre completo?</label>
+                      <input type="text" id="name" class="form-control" required/>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-outline">
+                      <label class="form-label" for="email">¿Cuál es tu correo electrónico?</label>
+                      <input type="email" id="email" class="form-control" required/>
+                    </div>
+                  </div>
+                </div>
+                <!-- 2 column grid layout with text inputs for the phone number and the reason -->
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div class="form-outline">
+                      <label class="form-label" for="phone">¿A qué número celular te podemos contactar?</label>
+                      <input type="number" id="phone" class="form-control" required/>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="reason">¿Cuál es el motivo del contacto?</label>
+                    <select class="form-select" id="reason" required>
+                      <option value="" selected>Escoge una opción</option>
+                      <option value="1">Busco formación empresarial</option>
+                      <option value="2">Busco información general</option>
+                      <option value="3">Busco una solución en tecnología e innovación</option>
+                      <option value="4">Busco una vacante laboral</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <!-- Message input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="message">Mensaje para nuestro equipo</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>  
+                </div>
+              
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input disabled class="form-check-input me-2" type="checkbox" value="" id="datos" />
+                  <label class="form-check-label" for="datos">He leído y acepto la <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#politica" style="color: black;">Política de tratamiento de datos personales y los Términos y condiciones.</a>
+                  </label>
+                </div>
+              
+                <!-- Submit button -->
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary mb-4">Enviar mensaje</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-center image-container">
+              <img class="enlarged-image" src="assets/img/science.png" />
+            </div>
+          </div>
+          
+        </div>
         </div>
       </div>
     </section>
@@ -477,6 +540,26 @@
     <div class="copyright py-4 text-center text-white">
       <div class="container">
         <small>Copyright &copy; Coco Labs, 2023</small>
+      </div>
+    </div>
+    <!-- Politica Modal -->
+    <div class="modal fade" id="politica" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="myModalLabel">Política de tratamiento de datos personales y los Términos y condiciones</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido de la modal -->
+            <p class="text-center">Aquí puedes agregar la información que deseas mostrar sobre la Política de tratamiento de datos personales y los Términos y condiciones.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No aceptar</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="document.getElementById('datos').checked = true;">Aceptar</button>
+
+          </div>
+        </div>
       </div>
     </div>
     <!-- Portfolio Modals-->
@@ -876,6 +959,9 @@
     </div>
     <div id="cartAlertSuccess" class="alert alert-success fixed-bottom" style="display: none;" role="alert">
       <p class="text-center">¡El elemento se añadió al carrito de compras exitosamente!</p>
+    </div>
+    <div id="cartAlertDanger" class="alert alert-danger fixed-bottom" style="display: none;" role="alert">
+      <p class="text-center">¡El elemento se eliminó del carrito de compras exitosamente!</p>
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

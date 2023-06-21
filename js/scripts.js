@@ -126,6 +126,7 @@ function removeFromCart(itemID) {
   
     if (index !== -1) {
       cartItems.splice(index, 1);
+      cartAlert(3)
       updateCart(); // Actualizar la vista del carrito
     }
   }
@@ -139,7 +140,7 @@ function cartAlert(path){
         setTimeout(function() {
         alertElement.style.display = 'none';
         }, 3000);
-    }else{
+    }else if (path == 2){
         // Obtener la referencia al elemento de la alerta
         var alertElement = document.getElementById('cartAlertWarning');
         alertElement.style.display = 'block';
@@ -147,5 +148,13 @@ function cartAlert(path){
         setTimeout(function() {
         alertElement.style.display = 'none';
         }, 3000);
+    }else {
+      // Obtener la referencia al elemento de la alerta
+      var alertElement = document.getElementById('cartAlertDanger');
+      alertElement.style.display = 'block';
+      // Ocultar la alerta después de 3 segundos
+      setTimeout(function() {
+      alertElement.style.display = 'none';
+      }, 3000);
     }
 }
