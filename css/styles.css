@@ -11188,3 +11188,191 @@ li.category:active {
 .remove-from-cart {
   margin-bottom: 10px;
 }
+
+.slider {
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+  width: calc(200px * 14);
+}
+
+.slider .slide {
+  width: 200px;
+}
+
+.slider .slide img {
+  width: 100%;
+}
+
+@keyframes scroll {
+  0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
+  100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+  }
+}
+
+
+
+
+
+
+.logos {
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: 'Skia', sans-serif;
+  box-sizing: border-box;
+  max-height: 400px;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: -5%;
+  margin-bottom: 140px;
+  padding-top: 5%;
+  padding-bottom: 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.div-block-logos{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: 'Skia', sans-serif;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  margin-top: 0;
+  transform: translate3d(0px, 0.81%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.div-block-4{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: Poppins-400,sans-serif;
+  box-sizing: border-box;
+  max-height: 100%;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background-image: linear-gradient(#fff,rgba(255,255,255,0) 10%,rgba(255,255,255,0) 90%,#fff);
+}
+
+.logo-wrap{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: Poppins-400,sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  flex-flow: wrap;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: space-between;
+  align-items: stretch;
+  justify-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  position: static;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+}
+
+.logo-bg{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: Poppins-400,sans-serif;
+  box-sizing: border-box;
+  width: 30%;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  box-shadow: 0 40px 54px rgba(0,0,0,.07);
+  height: 190px;
+  grid-area: span 1/span 2/span 1/span 2;
+}
+
+.logo-bg _160px{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: Poppins-400,sans-serif;
+  box-sizing: border-box;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  box-shadow: 0 40px 54px rgba(0,0,0,.07);
+  width: 24%;
+  height: 150px;
+  margin-top: 80px;
+  grid-area: span 1/span 2/span 1/span 2;
+}
+
+.logo-bg centerl{
+  -webkit-text-size-adjust: 100%;
+  color: #282828;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  font-family: Poppins-400,sans-serif;
+  box-sizing: border-box;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  box-shadow: 0 40px 54px rgba(0,0,0,.07);
+  width: 30%;
+  max-height: none;
+  max-width: none;
+  margin-left: 70px;
+  position: relative;
+  height: 190px;
+  grid-area: span 1/span 2/span 1/span 2;
+}
