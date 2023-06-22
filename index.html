@@ -86,7 +86,7 @@
                 >Contáctanos</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1 dropdown">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="cart-icon" class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-shopping-cart"></i> Carrito
               </a>
             
@@ -190,7 +190,92 @@
               pequeñas y medianas empresas. ¡tecnología accesible para todos!
             </p>
           </div>
+        </div><br><br>
+        <!-- Carousel -->
+        <h3 class="scroll-text text-center">NUESTRO EQUIPO DE TRABAJO</h3>
+        <div id="TeamCarousel" class="carousel slide scroll-text" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-bs-target="#TeamCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#TeamCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#TeamCarousel" data-bs-slide-to="2"></li>
+          </ol>
+        
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 900px; height: 480px;" src="assets/img/products/website.jpg" alt="Image 1">
+                    <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 1</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/automation.jpg" alt="Image 2">
+                    <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 2</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/app.jpg" alt="Image 3">
+                    <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 3</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Controls -->
+          <a class="carousel-control-prev" href="#TeamCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
         </div>
+        
+        <!-- End Carousel -->
       </div>
     </section>
   </div>
@@ -352,164 +437,27 @@
         <!-- Products Grid Items-->
         <div class="row justify-content-center">
           <!-- Products Menu-->
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 col-lg-4 mb-5">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-12 sticky-top">
-                      <h3 class="text-center scroll-text">Categorias</h3>
-                      <ul class="list-group text-center bg-primary">
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Website')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-globe"></i>   Sitios web</a></li>
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Automation')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-robot"></i>   Automatizaciones</a></li>
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('App')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-rocket"></i>   Aplicaciones</a></li>
-                      </ul>
-                      <br>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-8 col-lg-8 mb-5">
-                <!-- Container content -->
-                <div class="row">
-                  <!-- Products  website Item 1-->
-                  <div class="col-md-6 col-lg-6 mb-5">
-                    <div class="card" style="display: none;" id="cardWebsite">
-                      <img src="assets/img/products/website.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="Website Image">
-                      <div class="card-body text-center">
-                        <h5 class="card-title">Sitio web</h5>
-                        <p class="card-text">Descripción sitio web</p>
-                        <p class="card-price">$5.000.000</p>
-                        <div class="btn-group" role="group">
-                        <a href="javascript:void(0);" onclick="addToCart(1,'Sitio web', 5000000,'website.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
-                        <a href="javascript:void(0);" onclick="removeFromCart(1);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
-                      </div>
-                      </div>
-                    </div>
-                  </div>                  
-                  
-                  <!-- Products automation Item 1-->
-                  <div class="col-md-6 col-lg-6 mb-5">
-                    <div class="card" style="display: none;" id="cardAutomation">
-                      <img src="assets/img/products/automation.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="Automation Image">
-                      <div class="card-body text-center">
-                        <h5 class="card-title">Automatización</h5>
-                        <p class="card-text">Descripción automatización</p>
-                        <p class="card-price">$2.000.000</p>
-                        <div class="btn-group" role="group">
-                        <a href="javascript:void(0);" onclick="addToCart(2, 'Automatización', 2000000,'automation.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
-                        <a href="javascript:void(0);" onclick="removeFromCart(2);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- Products application Item 1-->
-                  <div class="col-md-6 col-lg-6 mb-5">
-                    <div class="card" style="display: none;" id="cardApp">
-                      <img src="assets/img/products/app.jpg" class="card-img-top img-fluid" style="height: 200px; padding: 0;" alt="App Image">
-                      <div class="card-body text-center">
-                        <h5 class="card-title">Aplicación</h5>
-                        <p class="card-text">Descripción aplicación</p>
-                        <p class="card-price">$4.000.000</p>
-                        <div class="btn-group" role="group">
-                          <a href="javascript:void(0);" onclick="addToCart(3,'Aplicación', 4000000,'app.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
-                          <a href="javascript:void(0);" onclick="removeFromCart(3);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
-                        </div>                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <br><br>
-        <!-- Carousel -->
-        <h3 class="scroll-text text-center">Nuestro equipo de trabajo</h3>
-        <br>
-        <div id="myCarousel" class="carousel slide scroll-text" data-bs-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-          </ol>
+          <div class="col-md-4">
+            <h1>Categorías</h1>
+
+            <select id="category-select" class="form-control">
+              <option value="">Seleccione</option>
+              <option value="analisis_y_diseño">Analisis y diseño</option>
+              <option value="consultoria">Consultoria</option>
+              <option value="web">Páginas web</option>
+            </select>
         
-          <!-- Slides -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="position-relative">
-                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/website.jpg" alt="Image 1">
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" style="display: block;">
-                    <div class="card-body">
-                      <h5 class="card-title">Información 1</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="position-relative">
-                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/automation.jpg" alt="Image 2">
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" style="display: block;">
-                    <div class="card-body">
-                      <h5 class="card-title">Información 2</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="position-relative">
-                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/app.jpg" alt="Image 3">
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" style="display: block;">
-                    <div class="card-body">
-                      <h5 class="card-title">Información 3</h5>
-                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div id="cart-sidebar" class="bg-warning">
+              <h3>Carrito de compras</h3>
+              <div id="cart-items"></div>
+              <footer><h4>Total: <span id="cart-total">$0</span></h4>
+                <button id="pay-button" class="btn btn-primary">Pagar</button></footer>
+              
             </div>
           </div>
-        
-          <!-- Controls -->
-          <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-        </div>
-        
-        <!-- End Carousel -->
-            </div>
+          <div class="col-md-8">
+            <div id="card-container"></div>
+          </div>
           </div>
 
       </div>
@@ -1157,5 +1105,104 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const categorySelect = document.getElementById('category-select');
+    const cardContainer = document.getElementById('card-container');
+    const cartIcon = document.getElementById('cart-icon');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const payButton = document.getElementById('pay-button');
+    
+    // Simular datos de elementos por categoría
+    const itemsByCategory = {
+      analisis_y_diseño: [
+        { name: 'Microempresa', price: 300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Pequeña', price: 500000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Mediana', price: 1300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Empresa', price: 'Bajo cotización', img: 'assets/img/products/website.jpg', description: 'descripción' }
+      ],
+      consultoria: [
+        { name: 'Micro - Pequeña - Mediana', price: 300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Empresa', price: 1000000, img: 'assets/img/products/website.jpg', description: 'descripción' }
+      ],
+      web: [
+        { name: 'Plan básico', price: 2000000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Plan sin funcionalidades', price: 3000000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Plan inicio ecomerce', price: 3500000, img: 'assets/img/products/website.jpg', description: 'descripción' },
+        { name: 'Página web con funcionalidades', price: 'Bajo cotización', img: 'assets/img/products/website.jpg', description: 'descripción' }
+      ]
+    };
+
+    // Generar las cards de los elementos de una categoría
+    function generateCards(category) {
+      cardContainer.innerHTML = '';
+      const items = itemsByCategory[category];
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+          <div class="card-body text-center">
+            <img src="${item.img}" class="card-img-top img-fluid" alt="Imagen del producto">
+            <h5 class="card-title">${item.name}</h5>
+            <h6 class="card-subtitle mb-2">${item.description}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">$${item.price}</h6>
+            <button class="btn btn-primary add-to-cart"><i class="fas fa-plus"></i> Agregar</button>
+          </div>
+
+        `;
+        cardContainer.appendChild(card);
+      });
+    }
+
+    // Evento al cambiar la categoría seleccionada
+    categorySelect.addEventListener('change', function() {
+      const selectedCategory = this.value;
+      generateCards(selectedCategory);
+    });
+
+    // Evento al hacer clic en el botón "Agregar" de una card
+    cardContainer.addEventListener('click', function(e) {
+      if (e.target.classList.contains('add-to-cart')) {
+        cartAlert(1)
+        const card = e.target.closest('.card');
+        const itemName = card.querySelector('.card-title').textContent;
+        const itemPrice = parseFloat(card.querySelector('.card-subtitle').textContent.replace('$', ''));
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+          <span>${itemName} - $${itemPrice}</span>
+          <button class="btn btn-danger btn-sm remove-from-cart"><i class="fas fa-trash-can"></i> Quitar</button>
+        `;
+        cartItems.appendChild(cartItem);
+        const currentTotal = parseFloat(cartTotal.textContent.replace('$', ''));
+        cartTotal.textContent = `$${currentTotal + itemPrice}`;
+      }
+    });
+
+    // Evento al hacer clic en el botón "Quitar" de un elemento en el carrito
+    cartItems.addEventListener('click', function(e) {
+      if (e.target.classList.contains('remove-from-cart')) {
+        cartAlert(2)
+        const cartItem = e.target.closest('.cart-item');
+        const itemPrice = parseFloat(cartItem.querySelector('span').textContent.split('-')[1].trim().replace('$', ''));
+        cartItem.remove();
+        const currentTotal = parseFloat(cartTotal.textContent.replace('$', ''));
+        cartTotal.textContent = `$${currentTotal - itemPrice}`;
+      }
+    });
+
+    // Evento al hacer clic en el icono del carrito
+    cartIcon.addEventListener('click', function() {
+      cartSidebar.classList.toggle('active');
+    });
+
+    // Evento al hacer clic en el botón de pagar
+    payButton.addEventListener('click', function() {
+      // Aquí puedes agregar la lógica para procesar el pago
+      // Puedes enviar una solicitud al servidor, etc.
+      alert('Funcionalidad de pago aún no implementada.');
+    });
+</script>
   </body>
 </html>
