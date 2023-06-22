@@ -93,7 +93,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Skia', sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -115,13 +115,14 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Skia', sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  font-family: 'Skia', sans-serif;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -167,6 +168,7 @@ h6, .h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-family: 'Skia', sans-serif;
 }
 
 abbr[title] {
@@ -248,6 +250,7 @@ sup {
 a {
   color: var(--bs-link-color);
   text-decoration: underline;
+  font-family: 'Skia', sans-serif;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -7778,8 +7781,8 @@ textarea.form-control-lg {
 }
 
 .py-4 {
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .py-5 {
@@ -10831,7 +10834,7 @@ html {
 }
 
 .page-section {
-  padding: 6rem 0;
+  padding: 3rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -10892,16 +10895,16 @@ html {
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-family: 'Skia', sans-serif;           
   font-weight: 700;
 }
 #mainNav .navbar-brand {
   color: #fff;
 }
 #mainNav .navbar-nav {
-  margin-top: 1rem;
+  margin-top: 0.2rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
   color: #212529;
@@ -10922,8 +10925,8 @@ html {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.01rem;
+    padding-bottom: 0.01rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
@@ -10984,8 +10987,8 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
-    padding-bottom: 6rem;
+    padding-top: calc(6rem + 38px);
+    padding-bottom: 2rem;
   }
   .masthead .masthead-heading {
     font-size: 4rem;
@@ -11035,8 +11038,8 @@ html {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #2c3e50;
   color: #fff;
 }
@@ -11062,6 +11065,7 @@ li.category:active {
 }
 
 .custom-dropdown-menu {
+  max-height: 200px; /* Ajusta la altura máxima según tus necesidades */
   max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
   width: auto;
@@ -11085,3 +11089,48 @@ li.category:active {
   height: auto;
 }
 
+.scroll-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.scroll-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para ajustar el tamaño del carousel */
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo para ajustar el tamaño de las imágenes */
+.carousel-item img {
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.carousel-img {
+  animation: fadeInOut 8s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}

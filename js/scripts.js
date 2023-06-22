@@ -158,3 +158,4 @@ function cartAlert(path){
       }, 3000);
     }
 }
+

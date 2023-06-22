@@ -6,9 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Coco Labs</title>
+    <title>COCO LABS</title>
+    <!-- Skia Font -->
+    <link href="https://fonts.cdnfonts.com/css/skia" rel="stylesheet">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
     <!-- Font Awesome icons (free version)-->
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -42,7 +45,7 @@
     >
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="assets/img/logo.png" width="30" height="30" alt="" />
+          <img src="assets/img/logo.png" width="60" height="60" alt="Logo" />
         </a>
         <button
           class="navbar-toggler text-uppercase font-weight-bold bg-primary text-dark rounded"
@@ -80,22 +83,22 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact"
-                >Contáctanos</a
-              >
+                >Contáctanos</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1 dropdown">
               <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-shopping-cart"></i> Carrito
               </a>
-              
+            
               <!-- Contenido del Carrito -->
-                <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu dropdown-menu-sm" aria-labelledby="cartDropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                  <h6 class="dropdown-header">Productos en el Carrito</h6>
-                  <div class="dropdown-divider"></div>
-                  <!-- Aquí van los productos del carrito -->
-                  <div id="cartList"></div>
-                </div>
+              <div class="dropdown-menu dropdown-menu-right custom-dropdown-menu" aria-labelledby="cartDropdown">
+                <h6 class="dropdown-header">Productos en el Carrito</h6>
+                <div class="dropdown-divider"></div>
+                <!-- Aquí van los productos del carrito -->
+                <div id="cartList"></div>
+              </div>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -110,7 +113,7 @@
         <!-- Icon Divider-->
         <div class="divider-custom divider-dark">
           <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-cloud"></i></div>
+          <div class="divider-custom-icon"><i class="fas fa-rocket"></i></div>
           <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
@@ -120,27 +123,28 @@
       </div>
     </header>
 
+    <div class="transition-element">
     <section class="page-section bg-secondary portfolio" id="purpose">
       <div class="container">
         <!-- About Section Heading-->
         <h2
-          class="page-section-heading text-center text-uppercase text-dark mb-0"
+          class="page-section-heading text-center text-uppercase text-dark mb-0 scroll-text"
         >
           Propósito
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-cloud"></i></div>
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line  scroll-text"></div>
+          <div class="divider-custom-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <div class="divider-custom-line  scroll-text"></div>
         </div>
         <!-- About Section Content-->
         <div class="row">
           <div class="col-lg-4 ms-auto text-dark">
-            <p class="lead">
+            <p class="lead text-justify scroll-text">
               ¡Bienvenido a Coco Labs, donde tus ideas toman vida!
             </p>
-            <p class="lead">
+            <p class="lead text-justify scroll-text">
               Nuestro objetivo es convertirnos en un laboratorio de aprendizaje
               e innovación, en donde buscamos constantemente capacitarnos,
               aprender y brindar las soluciones más eficientes e innovadoras a
@@ -149,36 +153,38 @@
             </p>
           </div>
           <div class="col-lg-4 me-auto">
-            <img class="img-fluid" src="assets/img/science.png" />
+            <img class="img-fluid  scroll-text" src="assets/img/science.png" />
           </div>
         </div>
       </div>
     </section>
+  </div>
 
     <!-- About Section-->
+    <div class="transition-element">
     <section class="page-section bg-primary text-dark mb-0" id="knowus">
       <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase">
+        <h2 class="page-section-heading text-center text-uppercase scroll-text">
           Conócenos
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-dark">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-cloud"></i></div>
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
+          <div class="divider-custom-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="divider-custom-line scroll-text"></div>
         </div>
         <!-- About Section Content-->
         <div class="row">
           <div class="col-lg-4 ms-auto">
-            <img class="img-fluid" src="assets/img/coco-glasses.png" />
+            <img class="img-fluid scroll-text" src="assets/img/coco-glasses.png" />
           </div>
           <div class="col-lg-4 me-auto">
-            <p class="lead">
+            <p class="lead scroll-text">
               Somos una compañía que cuenta con más de 10 años de experiencia,
               trabajando a nivel nacional e internacional.
             </p>
-            <p class="lead">
+            <p class="lead scroll-text">
               Queremos brindar soluciones tecnológicas a la medida y eliminar
               las barreras de acceso a estos servicios de las personas, las
               pequeñas y medianas empresas. ¡tecnología accesible para todos!
@@ -187,21 +193,23 @@
         </div>
       </div>
     </section>
+  </div>
 
     <!-- Portfolio Section-->
+    <div class="transition-element">
     <section class="page-section bg-secondary portfolio" id="services">
       <div class="container">
         <!-- Portfolio Section Heading-->
         <h2
-          class="page-section-heading text-center text-uppercase text-dark mb-0"
+          class="scroll-text page-section-heading text-center text-uppercase text-dark mb-0"
         >
           Servicios
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-cloud"></i></div>
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
+          <div class="divider-custom-icon"><i class="fa-solid fa-robot"></i></div>
+          <div class="divider-custom-line scroll-text"></div>
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
@@ -252,29 +260,6 @@
             </div>
           </div>
           <!-- Portfolio Item 3-->
-          <div class="col-md-6 col-lg-4 mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal3"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img
-                class="img-fluid"
-                src="assets/img/portfolio/coco-db.png"
-                alt="..."
-              />
-            </div>
-          </div>
-          <!-- Portfolio Item 4-->
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
             <div
               class="portfolio-item mx-auto"
@@ -297,6 +282,29 @@
               />
             </div>
           </div>
+          <!-- Portfolio Item 4-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div
+              class="portfolio-item mx-auto"
+              data-bs-toggle="modal"
+              data-bs-target="#portfolioModal3"
+            >
+              <div
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
+              >
+                <div
+                  class="portfolio-item-caption-content text-center text-white"
+                >
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img
+                class="img-fluid"
+                src="assets/img/portfolio/coco-db.png"
+                alt="..."
+              />
+            </div>
+          </div>
           <!-- Portfolio Item 5-->
           <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
             <div
@@ -314,7 +322,7 @@
                 </div>
               </div>
               <img
-                class="img-fluid"
+                class="img-fluid "
                 src="assets/img/portfolio/coco-construction.png"
                 alt="..."
               />
@@ -323,21 +331,23 @@
         </div>
       </div>
     </section>
+  </div>
 
     <!-- Products Section-->
+    <div class="transition-element">
     <section class="page-section bg-primary products" id="products">
       <div class="container">
         <!-- Products Section Heading-->
         <h2
-          class="page-section-heading text-center text-uppercase text-dark mb-0"
+          class="page-section-heading text-center text-uppercase text-dark mb-0 scroll-text"
         >
           Productos
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
           <div class="divider-custom-icon"><i class="fas fa-tag"></i></div>
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
         </div>
         <!-- Products Grid Items-->
         <div class="row justify-content-center">
@@ -348,12 +358,13 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-md-12 sticky-top">
-                      <h3 class="text-center">Categorias</h3>
+                      <h3 class="text-center scroll-text">Categorias</h3>
                       <ul class="list-group text-center bg-primary">
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Website')" class="nav-link py-3 px-0 px-lg-3 rounded"><i class="fas fa-globe"></i>   Sitios web</a></li>
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Automation')" class="nav-link py-3 px-0 px-lg-3 rounded"><i class="fas fa-robot"></i>   Automatizaciones</a></li>
-                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('App')" class="nav-link py-3 px-0 px-lg-3 rounded"><i class="fas fa-rocket"></i>   Aplicaciones</a></li>
-                      </ul><br>
+                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Website')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-globe"></i>   Sitios web</a></li>
+                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('Automation')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-robot"></i>   Automatizaciones</a></li>
+                        <li class="list-group-item category"><a href="javascript:void(0);" onclick="mostrarCard('App')" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-rocket"></i>   Aplicaciones</a></li>
+                      </ul>
+                      <br>
                     </div>
                   </div>
                 </div>
@@ -369,8 +380,10 @@
                         <h5 class="card-title">Sitio web</h5>
                         <p class="card-text">Descripción sitio web</p>
                         <p class="card-price">$5.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(1,'Sitio web', 5000000,'website.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
-                        <br><a href="javascript:void(0);" onclick="removeFromCart(1);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
+                        <div class="btn-group" role="group">
+                        <a href="javascript:void(0);" onclick="addToCart(1,'Sitio web', 5000000,'website.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
+                        <a href="javascript:void(0);" onclick="removeFromCart(1);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
+                      </div>
                       </div>
                     </div>
                   </div>                  
@@ -383,8 +396,10 @@
                         <h5 class="card-title">Automatización</h5>
                         <p class="card-text">Descripción automatización</p>
                         <p class="card-price">$2.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(2, 'Automatización', 2000000,'automation.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
-                        <br><a href="javascript:void(0);" onclick="removeFromCart(2);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
+                        <div class="btn-group" role="group">
+                        <a href="javascript:void(0);" onclick="addToCart(2, 'Automatización', 2000000,'automation.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
+                        <a href="javascript:void(0);" onclick="removeFromCart(2);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -397,56 +412,147 @@
                         <h5 class="card-title">Aplicación</h5>
                         <p class="card-text">Descripción aplicación</p>
                         <p class="card-price">$4.000.000</p>
-                        <a href="javascript:void(0);" onclick="addToCart(3,'Aplicación', 4000000,'app.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar al carrito</a>
-                        <br><a href="javascript:void(0);" onclick="removeFromCart(3);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar del carrito</a>
+                        <div class="btn-group" role="group">
+                          <a href="javascript:void(0);" onclick="addToCart(3,'Aplicación', 4000000,'app.jpg');" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</a>
+                          <a href="javascript:void(0);" onclick="removeFromCart(3);" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
+                        </div>                        
                       </div>
                     </div>
                   </div>
-                  
+                </div>
+                
+              </div>
+              <br><br>
+        <!-- Carousel -->
+        <h3 class="scroll-text text-center">Nuestro equipo de trabajo</h3>
+        <br>
+        <div id="myCarousel" class="carousel slide scroll-text" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          </ol>
+        
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/website.jpg" alt="Image 1">
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 1</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/automation.jpg" alt="Image 2">
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 2</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="position-relative">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/app.jpg" alt="Image 3">
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card" style="display: block;">
+                    <div class="card-body">
+                      <h5 class="card-title">Información 3</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Controls -->
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+        </div>
+        
+        <!-- End Carousel -->
             </div>
           </div>
 
       </div>
     </section>
+  </div>
 
     <!-- About Section-->
+    <div class="transition-element">
     <section class="page-section bg-secondary text-dark mb-0" id="contact">
       <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase">
+        <h2 class="page-section-heading text-center text-uppercase scroll-text">
           Contáctanos
         </h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-dark">
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
           <div class="divider-custom-icon"><i class="fas fa-envelope"></i></div>
-          <div class="divider-custom-line"></div>
+          <div class="divider-custom-line scroll-text"></div>
         </div>
         <!-- About Section Content-->
         <div class="row">
           <div class="col-lg-12 ms-auto">
-            <p class="lead text-center">
+            <p class="lead text-center scroll-text">
               Escríbenos para que alguien de nuestro equipo de expertos
               altamente calificados puedan brindarte soluciones.
             </p><br>
           </div>
           <!-- Put contact form here -->
           <div class="row">
-            <div class="col-lg-8 bg-primary p-4 rounded">
+            <div class="col-lg-8">
               <form>
                 <!-- 2 column grid layout with text inputs for the first name and email -->
                 <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-outline">
-                      <label class="form-label" for="name">¿Cuál es tu nombre completo?</label>
+                      <label class="form-label scroll-text" for="name">¿Cuál es tu nombre completo?</label>
                       <input type="text" id="name" class="form-control" required/>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-outline">
-                      <label class="form-label" for="email">¿Cuál es tu correo electrónico?</label>
+                      <label class="form-label scroll-text" for="email">¿Cuál es tu correo electrónico?</label>
                       <input type="email" id="email" class="form-control" required/>
                     </div>
                   </div>
@@ -455,12 +561,12 @@
                 <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-outline">
-                      <label class="form-label" for="phone">¿A qué número celular te podemos contactar?</label>
+                      <label class="form-label scroll-text" for="phone">¿A qué número celular te podemos contactar?</label>
                       <input type="number" id="phone" class="form-control" required/>
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label" for="reason">¿Cuál es el motivo del contacto?</label>
+                    <label class="form-label scroll-text" for="reason">¿Cuál es el motivo del contacto?</label>
                     <select class="form-select" id="reason" required>
                       <option value="" selected>Escoge una opción</option>
                       <option value="1">Busco formación empresarial</option>
@@ -473,14 +579,14 @@
                 
                 <!-- Message input -->
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="message">Mensaje para nuestro equipo</label>
+                  <label class="form-label scroll-text" for="message">Mensaje para nuestro equipo</label>
                   <textarea class="form-control" id="message" rows="4"></textarea>  
                 </div>
               
                 <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-center mb-4">
                   <input disabled class="form-check-input me-2" type="checkbox" value="" id="datos" />
-                  <label class="form-check-label" for="datos">He leído y acepto la <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#politica" style="color: black;">Política de tratamiento de datos personales y los Términos y condiciones.</a>
+                  <label class="form-check-label scroll-text" for="datos">He leído y acepto la <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#politica" style="color: black;">Política de tratamiento de datos personales y los Términos y condiciones.</a>
                   </label>
                 </div>
               
@@ -491,7 +597,7 @@
               </form>
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-center image-container">
-              <img class="enlarged-image" src="assets/img/science.png" />
+              <img class="enlarged-image  scroll-text" src="assets/img/science.png" />
             </div>
           </div>
           
@@ -499,6 +605,7 @@
         </div>
       </div>
     </section>
+  </div>
 
     <!-- Footer-->
     <footer class="footer text-center">
@@ -506,12 +613,12 @@
         <div class="row">
           <!-- Footer Location-->
           <div class="col-lg-6 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Ubicación</h4>
-            <p class="lead mb-0">Medellín, Colombia</p>
+            <h4 class="text-uppercase mb-4 scroll-text">Ubicación</h4>
+            <p class="lead mb-0 scroll-text">Medellín, Colombia</p>
           </div>
           <!-- Footer Social Icons-->
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Coco en la Web</h4>
+            <h4 class="text-uppercase mb-4 scroll-text">Coco en la Web</h4>
             <a
               class="btn btn-outline-light btn-social mx-1"
               href="https://instagram.com/cocolabssas"
@@ -538,26 +645,55 @@
     </footer>
     <!-- Copyright Section-->
     <div class="copyright py-4 text-center text-white">
-      <div class="container">
+      <div class="container  scroll-text">
         <small>Copyright &copy; Coco Labs, 2023</small>
       </div>
     </div>
     <!-- Politica Modal -->
-    <div class="modal fade" id="politica" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <div
+      class="portfolio-modal modal fade"
+      id="politica"
+      tabindex="-1"
+      aria-labelledby="politica"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-center" id="myModalLabel">Política de tratamiento de datos personales y los Términos y condiciones</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-header border-0">
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="modal-body">
-            <!-- Contenido de la modal -->
-            <p class="text-center">Aquí puedes agregar la información que deseas mostrar sobre la Política de tratamiento de datos personales y los Términos y condiciones.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No aceptar</button>
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Politica Modal - Title-->
+                  <h2
+                    class="portfolio-modal-title text-dark text-uppercase mb-0"
+                  >
+                  Política de tratamiento de datos personales y los Términos y condiciones
+                  </h2>
+                  <!-- Icon Divider-->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Politica Modal - Text-->
+                  <p class="mb-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus ipsum erat. Curabitur vitae urna lectus. Nunc vitae dui posuere, bibendum augue ut, pulvinar arcu. Integer laoreet nunc nec augue eleifend fringilla. Mauris elementum elit eu suscipit sagittis. Nunc finibus id nisi sit amet rutrum. Curabitur sollicitudin ante in mauris aliquet facilisis. Duis auctor molestie facilisis. Pellentesque in nunc eu orci vehicula faucibus. Mauris lacus orci, tempor vitae dolor sed, lobortis pretium justo. Nam magna metus, feugiat eget egestas et, dignissim id arcu. Sed id elit eu risus volutpat lacinia. Duis tempus nisi at nunc congue ultricies.
+                  </p>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="document.getElementById('datos').checked = false;">No aceptar</button>
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="document.getElementById('datos').checked = true;">Aceptar</button>
-
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -571,7 +707,7 @@
       aria-labelledby="portfolioModal1"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -595,7 +731,7 @@
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
-                      <i class="fas fa-cloud"></i>
+                      <i class="fas fa-robot"></i>
                     </div>
                     <div class="divider-custom-line"></div>
                   </div>
@@ -637,7 +773,7 @@
       aria-labelledby="portfolioModal2"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -661,7 +797,7 @@
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
-                      <i class="fas fa-cloud"></i>
+                      <i class="fa-solid fa-network-wired"></i>
                     </div>
                     <div class="divider-custom-line"></div>
                   </div>
@@ -702,7 +838,7 @@
       aria-labelledby="portfolioModal3"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -768,7 +904,7 @@
       aria-labelledby="portfolioModal4"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -792,7 +928,7 @@
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
-                      <i class="fas fa-cloud"></i>
+                      <i class="fa-solid fa-computer"></i>
                     </div>
                     <div class="divider-custom-line"></div>
                   </div>
@@ -834,7 +970,7 @@
       aria-labelledby="portfolioModal5"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -858,7 +994,7 @@
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
-                      <i class="fas fa-cloud"></i>
+                      <i class="fa-brands fa-uncharted"></i>
                     </div>
                     <div class="divider-custom-line"></div>
                   </div>
@@ -901,7 +1037,7 @@
       aria-labelledby="portfolioModal6"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl">
+      <div class="modal-dialog modallg">
         <div class="modal-content">
           <div class="modal-header border-0">
             <button
@@ -988,5 +1124,38 @@
     }
 
     </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+  var scrollTexts = document.querySelectorAll(".scroll-text");
+
+  function handleScroll() {
+    for (var i = 0; i < scrollTexts.length; i++) {
+      var scrollText = scrollTexts[i];
+      var triggerOffset = scrollText.offsetTop - window.innerHeight;
+
+      if (window.pageYOffset > triggerOffset) {
+        scrollText.classList.add("show");
+      } else {
+        scrollText.classList.remove("show");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+});
+
+    </script>
+    <script>
+      var carousel = document.getElementById('myCarousel');
+      carousel.addEventListener('slid.bs.carousel', function () {
+        setTimeout(function () {
+          carousel.carousel('next');
+        }, 3000); // Cambia el valor para ajustar el tiempo de espera entre imágenes
+      });
+    </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
