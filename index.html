@@ -204,10 +204,10 @@
           <!-- Slides -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="row">
+              <div class="row align-items-center">
                 <div class="col-md-8">
                   <div class="position-relative">
-                    <img class="d-block w-100" style="width: 900px; height: 480px;" src="assets/img/products/website.jpg" alt="Image 1">
+                    <img class="d-block w-100" style="width: 900px; height: 480px;" src="assets/img/team_members/default.png" alt="Image 1">
                     <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
@@ -217,7 +217,7 @@
                 <div class="col-md-4">
                   <div class="card" style="display: block;">
                     <div class="card-body">
-                      <h5 class="card-title">Información 1</h5>
+                      <h5 class="card-title">Luis</h5>
                       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
                     </div>
                   </div>
@@ -225,20 +225,20 @@
               </div>
             </div>
             <div class="carousel-item">
-              <div class="row">
+              <div class="row align-items-center">
                 <div class="col-md-8">
                   <div class="position-relative">
-                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/automation.jpg" alt="Image 2">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/team_members/default.png" alt="Image 2">
                     <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </a>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 align-items-center">
                   <div class="card" style="display: block;">
                     <div class="card-body">
-                      <h5 class="card-title">Información 2</h5>
+                      <h5 class="card-title">Natalia</h5>
                       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
                     </div>
                   </div>
@@ -246,10 +246,10 @@
               </div>
             </div>
             <div class="carousel-item">
-              <div class="row">
+              <div class="row align-items-center">
                 <div class="col-md-8">
                   <div class="position-relative">
-                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/products/app.jpg" alt="Image 3">
+                    <img class="d-block w-100" style="width: 800px; height: 450px;" src="assets/img/team_members/default.png" alt="Image 3">
                     <a class="carousel-control-next" href="#TeamCarousel" role="button" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
@@ -259,7 +259,7 @@
                 <div class="col-md-4">
                   <div class="card" style="display: block;">
                     <div class="card-body">
-                      <h5 class="card-title">Información 3</h5>
+                      <h5 class="card-title">Carlos</h5>
                       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit convallis nibh, quis imperdiet nunc luctus vel. Suspendisse ac efficitur augue. Curabitur sed vehicula diam, et aliquet sem.</p>
                     </div>
                   </div>
@@ -438,24 +438,37 @@
         <div class="row justify-content-center">
           <!-- Products Menu-->
           <div class="col-md-4">
-            <h1>Categorías</h1>
+            <h1 class="text-center scroll-text">Categorías</h1>
 
-            <select id="category-select" class="form-control">
+            <ul class="list-group text-center bg-primary">
+              <li value="analisis_y_diseño" class="list-group-item category"><a href="javascript:void(0);" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fa-solid fa-wand-magic-sparkles"></i> Analisis y diseño</a></li>
+              <li value="consultoria" class="list-group-item category"><a href="javascript:void(0);" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fa-solid fa-magnifying-glass"></i> Consultoria</a></li>
+              <li value="web" class="list-group-item category"><a href="javascript:void(0);" class="nav-link py-3 px-0 px-lg-3 rounded scroll-text"><i class="fas fa-globe"></i> Páginas web</a></li>
+            </ul>
+            <select id="category-select" class="form-control" style="display: none;">
               <option value="">Seleccione</option>
-              <option value="analisis_y_diseño">Analisis y diseño</option>
+              <option value="analisis_y_diseño">Análisis y diseño</option>
               <option value="consultoria">Consultoria</option>
               <option value="web">Páginas web</option>
             </select>
         
-            <div id="cart-sidebar" class="bg-warning">
-              <h3>Carrito de compras</h3>
-              <div id="cart-items"></div>
-              <footer><h4>Total: <span id="cart-total">$0</span></h4>
-                <button id="pay-button" class="btn btn-primary">Pagar</button></footer>
-              
+            <div id="cart-sidebar" class="bg-warning justify-content-center" style="overflow-y: auto;">
+              <h3 style="position: fixed; top: 15%; width: 100%;">Carrito de compras</h3><br><br>
+              <div id="cart-items" class="border border-dark" style="padding: 10px;"></div><br>
+              <footer class="text-center">
+                <h4>Total: <span id="cart-total">$0</span></h4>
+                <button id="pay-button" class="btn btn-primary">Pagar</button>
+              </footer>
             </div>
+            
+            
           </div>
           <div class="col-md-8">
+            <div class="container" id="no_category">
+              <h1 class="scroll-text text-center">¡Selecciona una categoria para ver los productos disponibles!</h1>
+              <img class="enlarged-image scroll-text" src="assets/img/coco-glasses.png" style="display: block; margin: 0 auto; width: 40%; height: auto; object-fit: contain;">
+             
+            </div>
             <div id="card-container"></div>
           </div>
           </div>
@@ -1106,6 +1119,23 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+  const liItems = document.querySelectorAll('.list-group-item.category');
+  const categorySelect2 = document.getElementById('category-select');
+
+  liItems.forEach(li => {
+    li.addEventListener('click', function() {
+      const value = this.getAttribute('value');
+      const selectOption = document.querySelector(`#category-select option[value="${value}"]`);
+      if (selectOption) {
+        selectOption.selected = true;
+
+        // Simular el evento de cambio (change)
+        const changeEvent = new Event('change');
+        categorySelect2.dispatchEvent(changeEvent);
+      }
+    });
+  });
+
   const categorySelect = document.getElementById('category-select');
     const cardContainer = document.getElementById('card-container');
     const cartIcon = document.getElementById('cart-icon');
@@ -1117,20 +1147,20 @@
     // Simular datos de elementos por categoría
     const itemsByCategory = {
       analisis_y_diseño: [
-        { name: 'Microempresa', price: 300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Pequeña', price: 500000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Mediana', price: 1300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Empresa', price: 'Bajo cotización', img: 'assets/img/products/website.jpg', description: 'descripción' }
+        { category: 'Análisis y diseño', name: 'Microempresa', price: 300000, img: 'assets/img/products/analisis_y_diseño.jpg', description: 'descripción' },
+        { category: 'Análisis y diseño', name: 'Pequeña', price: 500000, img: 'assets/img/products/analisis_y_diseño.jpg', description: 'descripción' },
+        { category: 'Análisis y diseño', name: 'Mediana', price: 1300000, img: 'assets/img/products/analisis_y_diseño.jpg', description: 'descripción' },
+        { category: 'Análisis y diseño', name: 'Empresa', price: 0, img: 'assets/img/products/analisis_y_diseño.jpg', description: 'Bajo cotización' }
       ],
       consultoria: [
-        { name: 'Micro - Pequeña - Mediana', price: 300000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Empresa', price: 1000000, img: 'assets/img/products/website.jpg', description: 'descripción' }
+        { category: 'Consultoria', name: 'Micro - Pequeña - Mediana', price: 300000, img: 'assets/img/products/consultoria.jpg', description: 'descripción' },
+        { category: 'Consultoria', name: 'Empresa', price: 1000000, img: 'assets/img/products/consultoria.jpg', description: 'descripción' }
       ],
       web: [
-        { name: 'Plan básico', price: 2000000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Plan sin funcionalidades', price: 3000000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Plan inicio ecomerce', price: 3500000, img: 'assets/img/products/website.jpg', description: 'descripción' },
-        { name: 'Página web con funcionalidades', price: 'Bajo cotización', img: 'assets/img/products/website.jpg', description: 'descripción' }
+        { category: 'Páginas web', name: 'Plan básico', price: 2000000, img: 'assets/img/products/paginas_web.png', description: 'descripción' },
+        { category: 'Páginas web', name: 'Plan sin funcionalidades', price: 3000000, img: 'assets/img/products/paginas_web.png', description: 'descripción' },
+        { category: 'Páginas web', name: 'Plan inicio ecomerce', price: 3500000, img: 'assets/img/products/paginas_web.png', description: 'descripción' },
+        { category: 'Páginas web', name: 'Página web con funcionalidades', price: 0, img: 'assets/img/products/paginas_web.png', description: 'Bajo cotización' }
       ]
     };
 
@@ -1138,21 +1168,36 @@
     function generateCards(category) {
       cardContainer.innerHTML = '';
       const items = itemsByCategory[category];
-      items.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `
-          <div class="card-body text-center">
-            <img src="${item.img}" class="card-img-top img-fluid" alt="Imagen del producto">
-            <h5 class="card-title">${item.name}</h5>
-            <h6 class="card-subtitle mb-2">${item.description}</h6>
-            <h6 class="card-subtitle mb-2 text-muted">$${item.price}</h6>
-            <button class="btn btn-primary add-to-cart"><i class="fas fa-plus"></i> Agregar</button>
-          </div>
+      let counter = 0; // Variable contador
 
-        `;
-        cardContainer.appendChild(card);
-      });
+items.forEach(item => {
+  if (counter % 2 === 0) {
+    // Crear nuevo row para cada dos elementos
+    const row = document.createElement('div');
+    row.classList.add('row');
+    cardContainer.appendChild(row);
+  }
+
+  // Crear la card
+  const card = document.createElement('div');
+  card.classList.add('card', 'col-md-6');
+  card.innerHTML = `
+    <div class="card-body text-center">
+      <img src="${item.img}" class="card-img-top img-fluid" alt="Imagen del producto"><br><br>
+      <h5 class="card-title">${item.name}</h5>
+      <h6 class="mb-2">${item.description}</h6>
+      <h6 class="card-text mb-2" style="display: none;">${item.category}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">$${item.price}</h6>
+      <button class="btn btn-primary add-to-cart"><i class="fas fa-plus"></i> Agregar</button>
+    </div>
+  `;
+
+  // Agregar la card al row actual
+  const currentRow = cardContainer.lastChild;
+  currentRow.appendChild(card);
+
+  counter++;
+});
     }
 
     // Evento al cambiar la categoría seleccionada
@@ -1166,14 +1211,24 @@
       if (e.target.classList.contains('add-to-cart')) {
         cartAlert(1)
         const card = e.target.closest('.card');
+        const itemCategory = card.querySelector('.card-text').textContent;
         const itemName = card.querySelector('.card-title').textContent;
         const itemPrice = parseFloat(card.querySelector('.card-subtitle').textContent.replace('$', ''));
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-          <span>${itemName} - $${itemPrice}</span>
+        <div class="content">
+        <div class="content-item">
+          <span class="categoryy">${itemCategory}</span>
+          <div class="item-details">
+            <span class="item-name">${itemName}</span>
+            <span class="item-price">$${itemPrice}</span>
+          </div>
           <button class="btn btn-danger btn-sm remove-from-cart"><i class="fas fa-trash-can"></i> Quitar</button>
-        `;
+        </div>
+        <hr class="border-dark">
+      </div>
+      `;
         cartItems.appendChild(cartItem);
         const currentTotal = parseFloat(cartTotal.textContent.replace('$', ''));
         cartTotal.textContent = `$${currentTotal + itemPrice}`;
@@ -1203,6 +1258,20 @@
       // Puedes enviar una solicitud al servidor, etc.
       alert('Funcionalidad de pago aún no implementada.');
     });
+
+     // Obtener la lista de elementos li
+  const liElements = document.querySelectorAll('.category');
+
+// Obtener el div a ocultar
+const noCategoryDiv = document.getElementById('no_category');
+
+// Agregar evento de clic a cada elemento li
+liElements.forEach(li => {
+  li.addEventListener('click', () => {
+    // Ocultar el div no_category
+    noCategoryDiv.style.display = 'none';
+  });
+});
 </script>
   </body>
 </html>

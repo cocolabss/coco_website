@@ -11147,12 +11147,44 @@ li.category:active {
   height: 100%;
   background-color: #f8f9fa;
   padding: 20px;
+  max-height: 90vh;
   transition: right 0.3s;
   z-index: 9999; /* Asegura que la barra lateral esté en la parte superior */
 }
+
+@media (max-width: 767px) {
+  #cart-sidebar {
+    width: 100%;
+    right: -100%; /* Para ocultar la barra lateral en dispositivos móviles */
+  }
+}
+
 #cart-sidebar.active {
   right: 0;
 }
 #cart-sidebar .cart-item {
+  margin-bottom: 10px;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.categoryy {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.item-name {
+  flex-grow: 1;
+}
+
+.item-price {
+  margin-left: 10px;
+}
+
+.remove-from-cart {
   margin-bottom: 10px;
 }
