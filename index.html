@@ -121,7 +121,6 @@
           Soluciones tecnológicas para impulsar tu negocio
         </p>
       </div>
-      
       </header>
     <div class="transition-element">
     <section class="page-section bg-secondary portfolio" id="purpose">
@@ -192,7 +191,6 @@
             </p>
           </div>
         </div>
-        
       </div>
     </section>
   </div>
@@ -374,9 +372,9 @@
               <option value="web">Páginas web</option>
             </select>
         
-            <div id="cart-sidebar" class="bg-primary justify-content-center border" style="overflow-y: auto;">
+            <div id="cart-sidebar" class="bg-primary border justify-content-center" style="overflow-y: auto;">
               <h3 style="position: fixed; top: 15%; width: 100%;">Carrito de compras</h3><br><br>
-              <div id="cart-items" class="border" style="padding: 10px;"></div><br>
+              <div id="cart-items" class="border " style="padding: 10px;"></div><br>
               <footer class="text-center">
                 <h4>Total: <span id="cart-total">$0</span></h4>
                 <button id="pay-button" class="btn btn-primary">Pagar</button><br><br>
@@ -490,6 +488,7 @@
     </section>
   </div>
 
+ 
     <!-- Footer-->
     <footer class="footer text-center">
       <div class="container">
@@ -1109,7 +1108,7 @@ items.forEach(item => {
   const card = document.createElement('div');
   card.classList.add('card', 'col-md-5');
   card.style.marginLeft = '10px'; // Espacio a la izquierda de la tarjeta
-  card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
+card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
   card.innerHTML = `
     <div class="card-body text-center">
       <img src="${item.img}" class="card-img-top img-fluid" alt="Imagen del producto"><br><br>

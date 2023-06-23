@@ -493,6 +493,7 @@ progress {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+  text-align: justify;
 }
 
 .display-1 {
@@ -604,6 +605,9 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img-thumbnail {
@@ -4221,6 +4225,7 @@ textarea.form-control-lg {
 
 .card-text:last-child {
   margin-bottom: 0;
+  text-align:justify;
 }
 
 .card-link + .card-link {
@@ -7674,6 +7679,11 @@ textarea.form-control-lg {
   margin-bottom: 3rem !important;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+  text-align:justify;
+}
+
 .mb-auto {
   margin-bottom: auto !important;
 }
@@ -8016,6 +8026,11 @@ textarea.form-control-lg {
 
 .text-uppercase {
   text-transform: uppercase !important;
+}
+
+.text-title{
+  text-transform: uppercase !important;
+  text-align: left;
 }
 
 .text-capitalize {
@@ -11222,4 +11237,55 @@ li.category:active {
   }
 }
 
+.conocenos {
+  animation: tilt-animation 5s linear infinite;
+}
+
+@keyframes tilt-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#imagenes-proposito{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#doctor-proposito {
+  width: 40%;
+  align-self: flex-end;
+}
+
+#laptop-proposito {
+  width: 25%;
+  align-self: flex-end;
+}
+
+
+.proposito {
+  animation: recorrido 5s linear infinite alternate;
+}
+
+@keyframes recorrido {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(90%);
+  }
+  55% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
