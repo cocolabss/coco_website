@@ -11289,6 +11289,54 @@ li.category:active {
   }
 }
 
+@keyframes tilt-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#imagenes-proposito{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#doctor-proposito {
+  width: 40%;
+  align-self: flex-end;
+}
+
+#laptop-proposito {
+  width: 25%;
+  align-self: flex-end;
+}
+
+
+.proposito {
+  animation: recorrido 5s linear infinite alternate;
+}
+
+@keyframes recorrido {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(90%);
+  }
+  55% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .cart-item-count {
   position: absolute;
   top: -10px;
