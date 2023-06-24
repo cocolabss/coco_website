@@ -52,23 +52,3 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
-  
-function cartAlert(path){
-    if (path == 1) {
-        // Obtener la referencia al elemento de la alerta
-        var alertElement = document.getElementById('cartAlertSuccess');
-        alertElement.style.display = 'block';
-        // Ocultar la alerta después de 3 segundos
-        setTimeout(function() {
-        alertElement.style.display = 'none';
-        }, 3000);
-    }else {
-      // Obtener la referencia al elemento de la alerta
-      var alertElement = document.getElementById('cartAlertDanger');
-      alertElement.style.display = 'block';
-      // Ocultar la alerta después de 3 segundos
-      setTimeout(function() {
-      alertElement.style.display = 'none';
-      }, 3000);
-    }
-}

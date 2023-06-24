@@ -979,15 +979,7 @@
         </div>
       </div>
     </div>
-    <div id="cartAlertWarning" class="alert alert-warning fixed-bottom" style="display: none;" role="alert">
-      <p class="text-center">¡El elemento que desea añadir al carrito de compras ya existe!</p>
-    </div>
-    <div id="cartAlertSuccess" class="alert alert-success fixed-bottom" style="display: none;" role="alert">
-      <p class="text-center">¡El elemento se añadió al carrito de compras exitosamente!</p>
-    </div>
-    <div id="cartAlertDanger" class="alert alert-danger fixed-bottom" style="display: none;" role="alert">
-      <p class="text-center">¡El elemento se eliminó del carrito de compras exitosamente!</p>
-    </div>
+    
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
@@ -1110,7 +1102,7 @@ items.forEach(item => {
   const card = document.createElement('div');
   card.classList.add('card', 'col-md-5');
   card.style.marginLeft = '10px'; // Espacio a la izquierda de la tarjeta
-card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
+  card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
   card.innerHTML = `
     <div class="card-body text-center">
       <img src="${item.img}" class="card-img-top img-fluid" alt="Imagen del producto"><br><br>
@@ -1139,7 +1131,6 @@ card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
     // Evento al hacer clic en el botón "Agregar" de una card
     cardContainer.addEventListener('click', function(e) {
       if (e.target.classList.contains('add-to-cart')) {
-        cartAlert(1)
         const card = e.target.closest('.card');
         const itemCategory = card.querySelector('.card-text').textContent;
         const itemName = card.querySelector('.card-title').textContent;
@@ -1168,7 +1159,6 @@ card.style.marginRight = '10px'; // Espacio a la derecha de la tarjeta
     // Evento al hacer clic en el botón "Quitar" de un elemento en el carrito
     cartItems.addEventListener('click', function(e) {
     if (e.target.classList.contains('remove-from-cart')) {
-      cartAlert(2);
 
     const cartItem = e.target.closest('.cart-item');
     const itemPriceElement = cartItem.querySelector('.item-price');
