@@ -131,13 +131,10 @@ a, li {
 
 .coco-item h3{
   font-size: 22px!important;
-  /* margin: 20px 0 100px 100px; */
-  margin-right: 80px;
 }
 
 .coco-item p{
   font-size: 20px!important;
-  margin-block: 80px;
 }
 
 
@@ -1680,7 +1677,7 @@ section {
 
 .coco .coco-item .coco-img-bg {
   position: relative;
-  width: 30%;
+  width: 80%;
 }
 
 
