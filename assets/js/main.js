@@ -23,7 +23,7 @@ window.onload = function() {
   const wordElements = document.querySelectorAll('.word');
   wordElements.forEach((wordElement, index) => {
     setTimeout(() => {
-      wordElement.style.color = 'black';
+      wordElement.style.color = 'white';
     }, delay);
     delay += 200; // Cambia esta cantidad para ajustar la velocidad de transición
   });
