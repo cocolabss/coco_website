@@ -3,6 +3,32 @@
 * Website URL: https://cocolabss.github.io/coco_website/
 * Author: Coco Labs S.A.S - 2023
 */
+
+// función para efecto de texto inicial
+window.onload = function() {
+  // Obtener el elemento de texto
+  const textElement = document.getElementById('loading-text');
+  
+  // Obtener las palabras del texto
+  const words = textElement.textContent.split(' ');
+
+  // Crear un array de palabras con sus respectivos elementos <span>
+  const wordSpans = words.map(word => `<span class="word">${word}</span>`);
+
+  // Reemplazar el contenido del elemento con las palabras coloreadas
+  textElement.innerHTML = wordSpans.join(' ');
+
+  // Cambiar el color de las palabras de gris a negro palabra por palabra
+  let delay = 0;
+  const wordElements = document.querySelectorAll('.word');
+  wordElements.forEach((wordElement, index) => {
+    setTimeout(() => {
+      wordElement.style.color = 'black';
+    }, delay);
+    delay += 200; // Cambia esta cantidad para ajustar la velocidad de transición
+  });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
