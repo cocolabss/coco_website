@@ -934,7 +934,6 @@ a, li {
 }
 
 
-
 #first-row .container-fluid {
   display: flex;
   justify-content: space-between;
@@ -1677,7 +1676,7 @@ section {
 
 .coco .coco-item .coco-img-bg {
   position: relative;
-  width: 80%;
+  width: auto;
 }
 
 .coco .coco-item .coco-img-bg img {
