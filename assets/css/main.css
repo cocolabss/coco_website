@@ -7,8 +7,8 @@
 /*--------------------------------------------------------------
 # Font & Color Variables
 --------------------------------------------------------------*/
-/* Fuente FIRE CODE */
-@import url('https://fonts.googleapis.com/css2?family=Fire+Code:wght@300;500&display=swap');
+/* Fuente Fira Code Bold */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap');
 
 /* Fuente MONTSERRAT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -16,7 +16,7 @@
 /* Estilos de fuente por defecto */
 :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Fire Code", sans-serif;
+  --font-primary: "Fira Code", sans-serif;
   --font-secondary: "Montserrat", sans-serif; 
 }
 
@@ -27,6 +27,7 @@
   --color-background: #ffffff;
   --color-background-rgb: 255, 255, 255;
   --color-primary: #d8c798;
+  --color-intent-hover-button: 193, 203, 77;
   --color-primary-rgb: 232, 69, 69;
   --color-secondary: #32353a;
   --color-secondary-rgb: 50, 53, 58;
@@ -77,8 +78,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-primary);
-  font-weight: 500;
+  font-family: var(--font-primary), monospace;
+  font-weight: 700;
 }
 
 section {
@@ -259,11 +260,13 @@ a, li {
   flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
   align-items: center;
   margin-top: 10px;
+  padding-right: 2.5%!important;
 }
 
 #first-row .social-links a {
   font-size: 18px;
   margin: 0 5px; /* Espaciado entre los iconos */
+  
 }
 
 /* Resto del CSS para el segundo row (abajo) */
@@ -288,6 +291,21 @@ a, li {
   }
   .small-screen {
     display: none;
+  }
+
+  #titulo {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  #loading-text {
+    font-size: 20px!important;
+    line-height: 1.5;
+    color: gray; /* Color de letra gris inicial */
+    transition: color 0.3s; /* Transición de color en 0.3 segundos */
+    margin: 10 auto !important;
+    width: 90%;
+	  max-width: 70ch;
   }
 }
 
@@ -357,7 +375,7 @@ section {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--color-nav);
+    color: black;
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--font-secondary);
@@ -643,7 +661,7 @@ section {
 }
 
 .scroll-top:hover {
-  background-color: rgba(var(--color-primary-rgb), 0.8);
+  background-color: rgba(var(--color-intent-hover-button),0.6);
   color: #ffffff;
 }
 
@@ -742,12 +760,13 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  --color-background: #f5e9cc;
-  --color-box-background: #d8c798;
+  --color-background: #f8d6b5;
+  --color-box-background: #f5e9cc;
   color: var(--color-default);
   background-color: var(--color-background);
   font-size: 14px;
   padding-bottom: 20px;
+  margin-top: -2%;
 }
 
 .footer .footer-top {
@@ -971,10 +990,11 @@ section {
 }
 
 #loading-text {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.5;
   color: gray; /* Color de letra gris inicial */
   transition: color 0.3s; /* Transición de color en 0.3 segundos */
+  font-style: italic;
 }
 
 .black {
@@ -1313,14 +1333,11 @@ section {
   color: var(--color-primary);
 }
 
-.coco .coco-item .coco-img-bg {
-  position: relative;
-  width: 30%;
-}
 
 @media (max-width: 640px) {
-  .coco .coco-item .coco-img-bg {
-    width: 30%;
+
+  #loading-text {
+    font-size: 18px;
   }
 }
 
@@ -3003,4 +3020,73 @@ section {
 .blog-details .comments .reply-form .btn-primary:hover {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
+}
+
+/* estilos personalizados */
+#titulo {
+  font-weight: bold;
+}
+
+#botonProductos1 {
+  font-size: 20px;
+  display: inline-block;
+  width: 250px;
+  margin: 30px auto;
+  padding: 10px 10px;
+  text-align: center;
+  background-color: rgb(216, 199, 152,0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+#botonProductos1:hover {
+  background-color: rgba(var(--color-intent-hover-button),0.6);
+}
+
+#coco ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#coco li::before {
+  content: "\2713"; 
+  margin-right: 5px; 
+  color: var(--color-primary); 
+}
+
+#fullscreen-video {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #fullscreen-video {
+    height: auto;
+    max-height: 100vh;
+  }
+}
+
+.form-contact {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.bg-olas {
+  background-color: #5cbfcd;
+}
+
+.video-container-footer{
+  position: relative;
+  margin-top: -60%;
+}
+
+#contactenos {
+  margin-bottom: -30%;
 }
