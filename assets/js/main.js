@@ -13,7 +13,11 @@ window.onload = function() {
   const words = textElement.textContent.split(' ');
 
   // Crear un array de palabras con sus respectivos elementos <span>
-  const wordSpans = words.map(word => `<span class="word">${word}</span>`);
+  const wordSpans = words.map((word, index) => {
+    // Aplicar cursiva solo a la primera palabra
+    const fontStyle = index === 0 ? 'italic' : 'normal';
+    return `<span class="word" style="font-style: ${fontStyle};">${word}</span>`;
+  });
 
   // Reemplazar el contenido del elemento con las palabras coloreadas
   textElement.innerHTML = wordSpans.join(' ');
@@ -28,6 +32,7 @@ window.onload = function() {
     delay += 300; // Cambia esta cantidad para ajustar la velocidad de transición
   });
 };
+
 
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
