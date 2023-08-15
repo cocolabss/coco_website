@@ -23,9 +23,9 @@ window.onload = function() {
   const wordElements = document.querySelectorAll('.word');
   wordElements.forEach((wordElement, index) => {
     setTimeout(() => {
-      wordElement.style.color = 'white';
+      wordElement.style.color = 'black';
     }, delay);
-    delay += 400; // Cambia esta cantidad para ajustar la velocidad de transición
+    delay += 300; // Cambia esta cantidad para ajustar la velocidad de transición
   });
 };
 
