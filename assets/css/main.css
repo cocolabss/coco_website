@@ -3072,12 +3072,7 @@ section {
     height: auto;
     max-height: 100vh;
   }
-  #video-container-footer{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 10vh;
-  }
+  
 }
 
 .form-contact {
@@ -3095,6 +3090,23 @@ section {
   overflow: hidden;
   width: 100%;
   height: 100vh;
+}
+
+@media screen and (max-width:410px){
+  #video-container-footer{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 20vh;
+  }
+}
+@media screen and (min-width:411px) and (max-width:768px){
+  #video-container-footer{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 25vh;
+  }
 }
 
 #contactenos {
