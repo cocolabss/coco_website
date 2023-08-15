@@ -116,24 +116,6 @@ a, li {
   position: relative;
 }
 
-
-.section-title h2:before,
-.section-title h2:after {
-  content: "";
-  width: 50px;
-  height: 2px;
-  background: var(--color-primary);
-  display: inline-block;
-}
-
-.section-title h2:before {
-  margin: 0 15px 10px 0;
-}
-
-.section-title h2:after {
-  margin: 0 0 10px 15px;
-}
-
 .section-title p {
   margin-bottom: 0;
 }
@@ -867,7 +849,6 @@ section {
 .footer .copyright {
   padding-top: 25px;
   padding-bottom: 25px;
-  background-color: var(--color-box-background);
 }
 
 .footer .copyright p {
@@ -1307,6 +1288,16 @@ section {
   color: var(--color-inverse);
   padding: 8px 30px 10px 30px;
   border-radius: 4px;
+}
+
+.coco-item {
+  display: flex;
+  align-items: flex-start; /* Alinear los elementos en la parte superior */
+  margin-bottom: 30px; /* Ajusta según tus necesidades */
+}
+
+.coco-img-bg {
+  border-radius: 10px;
 }
 
 .coco .coco-item .btn-get-started:hover {
