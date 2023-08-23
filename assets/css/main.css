@@ -3421,15 +3421,35 @@ section {
   object-fit: cover;
 }
 
+#calendly-button {
+  background-color: #f5e9cc; 
+  color: #ffffff; 
+  text-decoration: none; 
+  border-radius: 5px; 
+  z-index: 2; 
+  padding: 20px 20px; 
+  border: 4px solid #fff;
+}
+
+#calendly-button-2 {
+  margin-bottom: -80px; 
+  margin-top: 60px;
+}
+
 @media screen and (max-width: 768px) {
   .img-coco2 {
     width: 100%;
   }
+
+  #calendly-button-2 {
+    margin-bottom: -20px; 
+    margin-top: 10px;
+  }
 }
 
-.calendly-badge-content {
-  bottom: auto;
-  top: 1000px; 
-  right: 10px;
-  left: auto;
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #calendly-button-2 {
+    margin-bottom: -30px; 
+    margin-top: 30px;
+  }
 }
