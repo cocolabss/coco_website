@@ -624,7 +624,7 @@
                 </ul>
                 <div class="">
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -646,7 +646,7 @@
 
                 <div class="">
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -668,7 +668,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -688,7 +688,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -709,7 +709,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -730,7 +730,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -753,7 +753,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -777,7 +777,7 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
@@ -800,12 +800,16 @@
                 </ul>
                 <div>
                   <a class="btn-getstarted" href="#"
-                    >Preguntar por este servicio</a
+                    >Contactanos</a
                   >
                 </div>
               </div>
             </div>
+            <div class="d-flex justify-content-center" style="margin-bottom: -80px; margin-top: 60px;">
+              <a href="javascript:void(0);" class="text-uppercase text-black" id="calendly-button" style="background-color: #f5e9cc; color: #ffffff; text-decoration: none; border-radius: 5px; z-index: 2; padding: 20px 20px; border: 4px solid #fff;"><img src="assets/img/coco_calendary.svg" alt="Coco calendary" style="width: 50px;"> Agenda una reunión aquí</a>
+            </div>
           </div>
+          
         </div>
       </section>
 
@@ -913,7 +917,7 @@
                   <div class="d-flex justify-content-center">
                     <button
                       type="submit"
-                      class="btn btn-getstarted mb-1 text-black"
+                      class="btn btn-getstarted mb-1 text-white"
                     >
                       Enviar mensaje
                     </button>
@@ -1331,7 +1335,11 @@
     <!-- Principio del widget de globo de Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/andresgd7', text: 'Programar reunión', color: '#0069ff', textColor: '#ffffff', branding: false }); }</script>
+    <script>
+      document.getElementById('calendly-button').addEventListener('click', function() {
+          Calendly.initPopupWidget({ url: 'https://calendly.com/andresgd7' });
+      });
+      </script>
     <!-- Final del widget de globo de Calendly -->
   </body>
 </html>

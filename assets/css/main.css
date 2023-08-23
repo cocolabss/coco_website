@@ -3426,3 +3426,10 @@ section {
     width: 100%;
   }
 }
+
+.calendly-badge-content {
+  bottom: auto;
+  top: 1000px; 
+  right: 10px;
+  left: auto;
+}
