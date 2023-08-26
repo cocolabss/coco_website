@@ -3046,24 +3046,6 @@ section {
   color: var(--color-primary); 
 }
 
-#fullscreen-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 3;
-}
-
-@media (max-width: 768px) {
-  #fullscreen-video {
-    height: auto;
-    max-height: 100vh;
-  }
-  
-}
-
 .form-contact {
   background-color: transparent;
   border-radius: 5px;
@@ -3072,30 +3054,6 @@ section {
 
 .bg-olas {
   background-color: #68c7d5;
-}
-
-#video-container-footer{
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-}
-
-@media screen and (max-width:410px){
-  #video-container-footer{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 20vh;
-  }
-}
-@media screen and (min-width:411px) and (max-width:768px){
-  #video-container-footer{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 25vh;
-  }
 }
 
 #contactenos {
@@ -3491,4 +3449,21 @@ section {
   .different-content {
     display: none;
   }
+}
+
+#video-container-footer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh !important;
+}
+
+#fullscreen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3;
 }
