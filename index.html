@@ -146,10 +146,18 @@
     <main id="main">
       <!-- inicio Section - Home Page -->
       <section id="inicio" class="inicio">
-        <video autoplay muted loop id="inicio-video" data-aos="fade-in">
+        <div class="ios-safari-content">
+          <video autoplay muted loop id="inicio-video" data-aos="fade-in" playsinline>
+            <source src="assets/videos/coco.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+      </div>
+      <div class="different-content">
+        <video autoplay muted loop id="inicio-video" data-aos="fade-in" playsinline>
           <source src="assets/videos/coco.mp4" type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
+    </div>
 
         <div class="container">
           <div class="row">
@@ -159,10 +167,7 @@
               <h5 style="font-style: italic; color: black; font-size: 18px">
                 Juntos avanzando al siguiente nivel.
               </h5>
-              <p id="loading-text">
-                La tecnología es una herramienta para complementar, desarrollar
-                y avanzar. Nos especializamos en el desarrollo de software.
-              </p>
+              <p id="loading-text">La tecnología es una herramienta para complementar, desarrollar y avanzar. Nos especializamos en el desarrollo de software.</p>
               <a id="botonProductos1" href="#servicios"
                 ><h6 class="text-white">Contáctanos</h6></a
               >
@@ -251,7 +256,7 @@
             <div class="col-1"></div>
           </div>
 
-          <div class="row gy-4 justify-content-center coco-item">
+          <div class="row gy-4 justify-content-center coco-item hide-on-big-2">
             <div class="col-1"></div>
             <div
               class="col-lg-5 d-flex align-items-center coco-img-bg"
@@ -280,6 +285,39 @@
                 <li>Respeto</li>
                 <li>Compromiso</li>
               </ul>
+            </div>
+            <div class="col-1" id="responsabilidad"></div>
+          </div>
+
+          <div class="row gy-4 justify-content-center coco-item hide-on-small-2">
+            <div class="col-1"></div>
+            <div class="col-lg-5" data-aos="fade-up">
+              <h3>Ética empresarial</h3>
+              <h6 style="font-style: italic">Un sueño con una visión clara</h6>
+              <br />
+              <p>
+                En Coco Labs creemos en la democratización de los servicios
+                tecnológicos como la manera de impulsar el crecimiento
+                empresarial. Buscamos brindar un servicio integral donde seamos
+                un aliado amigo de nuestros clientes, bajo 4 pilares esenciales:
+              </p>
+              <ul>
+                <li>Oportunidad</li>
+                <li>Cumplimiento</li>
+                <li>Respeto</li>
+                <li>Compromiso</li>
+              </ul>
+            </div>
+            <div
+              class="col-lg-5 d-flex align-items-center coco-img-bg"
+              data-aos="zoom-out"
+            >
+              <img
+                src="assets/img/2.png"
+                class="img-coco"
+                alt=""
+                id="img2Tech"
+              />
             </div>
             <div class="col-1" id="responsabilidad"></div>
           </div>

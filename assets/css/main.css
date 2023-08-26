@@ -3210,6 +3210,23 @@ section {
   }
 }
 
+@media screen and (max-width:991px){
+  .hide-on-big-2 {
+    display: none;
+  }
+  .hide-on-small-2 {
+    display: flex;
+  }
+}
+@media screen and (min-width:992px){
+  .hide-on-big-2 {
+    display: flex;
+  }
+  .hide-on-small-2 {
+    display: none;
+  }
+}
+
 .timeline {
   position: relative;
   background: #d8c798;
@@ -3451,5 +3468,27 @@ section {
   #calendly-button-2 {
     margin-bottom: -30px; 
     margin-top: 30px;
+  }
+}
+
+.ios-safari-content {
+  display: none; 
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.different-content {
+  display: block;
+}
+
+/* Media query para dispositivos iOS y Safari */
+@media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (max-device-width: 768px) and (min-resolution: 192dpi) {
+  .ios-safari-content {
+    display: block; 
+  }
+  .different-content {
+    display: none;
   }
 }
