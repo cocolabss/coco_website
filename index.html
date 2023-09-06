@@ -14,6 +14,9 @@
       name="keywords"
     />
 
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <!-- Favicons -->
     <link href="assets/img/logo.png" rel="icon" />
     <link href="assets/img/logo.png" rel="apple-touch-icon" />
@@ -107,6 +110,7 @@
                 <li><a href="#equipo">Nuestro equipo</a></li>
                 <li><a href="#servicios">Productos</a></li>
                 <li><a href="#responsabilidad">Responsabilidad</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
                 <li style="background-color: #926442">
                   <a style="color: #d8c798" href="#contactenos">Contactenos</a>
                 </li>
@@ -127,6 +131,7 @@
                 <li><a href="#equipo">Nuestro equipo</a></li>
                 <li><a href="#servicios">Productos</a></li>
                 <li><a href="#responsabilidad">Responsabilidad</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
                 <li style="background-color: rgb(146, 100, 66)">
                   <a style="color: #d8c798" href="#contactenos"
                     >Contáctanos&nbsp;&nbsp;</a
@@ -160,7 +165,7 @@
                 Juntos avanzando al siguiente nivel.
               </h5>
               <p id="loading-text">La tecnología es una herramienta para complementar, desarrollar y avanzar. Nos especializamos en el desarrollo de software.</p>
-              <a id="botonProductos1" href="#servicios"
+              <a id="botonProductos1" href="#contactenos"
                 ><h6 class="text-white">Contáctanos</h6></a
               >
             </div>
@@ -214,7 +219,7 @@
           <div class="row">
             <div class="col-6 align-self-center"></div>
             <div class="col-6 align-self-center">
-              <a class="btn-getstarted" href="#about">Contáctanos</a>
+              <a class="btn-getstarted" href="#contactenos">Contáctanos</a>
             </div>
           </div>
         </div>
@@ -393,7 +398,7 @@
           <div class="row">
             <div class="col-6 align-self-center"><h2>Equipo</h2></div>
             <div class="col-6 align-self-center">
-              <a class="btn-getstarted" href="#about">Contáctanos</a>
+              <a class="btn-getstarted" href="#contactenos">Contáctanos</a>
             </div>
           </div>
         </div>
@@ -634,7 +639,7 @@
                 <h2>Productos y Servicios</h2>
               </div>
               <div class="col-6 align-self-center" id="cocoOptimizacion">
-                <a class="btn-getstarted" href="#about">Contáctanos</a>
+                <a class="btn-getstarted" href="#contactenos">Contáctanos</a>
               </div>
             </div>
           </div>
@@ -653,7 +658,7 @@
                   <li>Optimiza tus costos de producción y tiempo.</li>
                 </ul>
                 <div class="">
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -675,7 +680,7 @@
                 </ul>
 
                 <div class="">
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -697,7 +702,7 @@
                   <li>Optimiza tus costos laborales.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -717,7 +722,7 @@
                   <li>Mayor accesibilidad y disponibilidad.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -738,7 +743,7 @@
                   <li>Mejor competitividad.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -759,7 +764,7 @@
                   <li>Reducción de riesgos.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -782,7 +787,7 @@
                   <li>Agilidad en la toma de decisiones.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -806,7 +811,7 @@
                   </li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -829,7 +834,7 @@
                   <li>Optimización del tiempo de espera.</li>
                 </ul>
                 <div>
-                  <a class="btn-getstarted" href="#"
+                  <a class="btn-getstarted" href="#contactenos"
                     >Contactanos</a
                   >
                 </div>
@@ -853,9 +858,9 @@
                   Contáctanos
                 </h2>
                 <br />
-                <form>
+                <form id="contactForm">
                   <div class="row mb-4">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-outline">
                         <label class="form-label" for="name"
                           >¿Cuál es tu nombre completo?</label
@@ -863,19 +868,6 @@
                         <input
                           type="text"
                           id="name"
-                          class="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-outline">
-                        <label class="form-label" for="email"
-                          >¿Cuál es tu correo electrónico?</label
-                        >
-                        <input
-                          type="email"
-                          id="email"
                           class="form-control"
                           required
                         />
@@ -898,15 +890,17 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label" for="reason"
-                        >¿En que tipo de producto estás interesado?</label
-                      >
-                      <select class="form-select" id="reason" required>
-                        <option value="" selected>Escoge una opción</option>
-                        <option value="1">Diseño web</option>
-                        <option value="2">Desarrollo web</option>
-                        <option value="3">Integraciones</option>
-                      </select>
+                      <div class="form-outline">
+                        <label class="form-label" for="email"
+                          >¿Cuál es tu correo electrónico?</label
+                        >
+                        <input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                          required
+                        />
+                      </div>
                     </div>
                   </div>
 
@@ -1325,6 +1319,8 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
       integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
@@ -1355,6 +1351,65 @@
           },
         });
       });
+    </script>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    let formData = new FormData();
+    formData.append("name", document.getElementById("name").value);
+    formData.append("email", document.getElementById("email").value);
+    formData.append("phone", document.getElementById("phone").value);
+    formData.append("message", document.getElementById("message").value);
+
+    fetch('https://cocolabs.com.co/send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json()) // Asumimos que el servidor devuelve un objeto JSON
+    .then(data => {
+        if (data.success) { // Comprobamos que el servidor devuelva un mensaje de éxito
+            Swal.fire(
+                '¡Enviado!',
+                'Tu mensaje ha sido enviado con éxito.',
+                'success'
+            ).then(data => {
+    if (data.success) {
+        Swal.fire(
+            '¡Enviado!',
+            'Tu mensaje ha sido enviado con éxito.',
+            'success'
+        ).then(() => {
+            location.reload();
+        });
+    } else if (data.error) {
+        Swal.fire(
+            'Error',
+            'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+            'error'
+        );
+    }
+});
+        } else if (data.error) {
+            Swal.fire(
+                'Error',
+                'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+                'error'
+            );
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        Swal.fire(
+            'Error',
+            'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+            'error'
+        );
+    });
+});
+
+
     </script>
 
     <!-- Template Main JS File -->
