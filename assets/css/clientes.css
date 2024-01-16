@@ -179,6 +179,18 @@
 .main-timeline-2 .timeline-2:nth-child(4n) .content-inner-2{ background: #edd9b8; }
 .main-timeline-2 .timeline-2:nth-child(4n) .content-inner-2:before{ border-right-color: #edd9b8; }
 .main-timeline-2 .timeline-2:nth-child(4n) .year-2{ background: #926442; }
+.main-timeline-2 .timeline-2:nth-child(5n) .icon-2 img,
+.main-timeline-2 .timeline-2:nth-child(5n) .content-inner-2{ background: #98979b !important; }
+.main-timeline-2 .timeline-2:nth-child(5n) .content-inner-2:before{ border-right-color: #98979b !important; }
+.main-timeline-2 .timeline-2:nth-child(5n) .year-2{ background: #000 !important; }
+.main-timeline-2 .timeline-2:nth-child(6n) .icon-2 img,
+.main-timeline-2 .timeline-2:nth-child(6n) .content-inner-2{ background: #fff !important; }
+.main-timeline-2 .timeline-2:nth-child(6n) .content-inner-2:before{ border-right-color: #fff !important; }
+.main-timeline-2 .timeline-2:nth-child(6n) .year-2{ background: #60009a !important; }
+.main-timeline-2 .timeline-2:nth-child(7n) .icon-2 img,
+.main-timeline-2 .timeline-2:nth-child(7n) .content-inner-2{ background: #fff !important; }
+.main-timeline-2 .timeline-2:nth-child(7n) .content-inner-2:before{ border-right-color: #fff !important; }
+.main-timeline-2 .timeline-2:nth-child(7n) .year-2{ background: #036f34 !important; }
 @media only screen and (max-width: 1200px){
     .main-timeline-2 .icon-2{
         width: 110px;
@@ -273,6 +285,9 @@
     .main-timeline-2 .timeline-2:nth-child(2n) .content-inner-2:before{ border-bottom-color: #5e7fb4; }
     .main-timeline-2 .timeline-2:nth-child(3n) .content-inner-2:before{ border-bottom-color: #b44b90; }
     .main-timeline-2 .timeline-2:nth-child(4n) .content-inner-2:before{ border-bottom-color: #cb9968; }
+    .main-timeline-2 .timeline-2:nth-child(5n) .content-inner-2:before{ border-bottom-color: #98979b; }
+    .main-timeline-2 .timeline-2:nth-child(6n) .content-inner-2:before{ border-bottom-color: #60009a; }
+    .main-timeline-2 .timeline-2:nth-child(7n) .content-inner-2:before{ border-bottom-color: #036f34; }
 }
 
 #clientes {
@@ -288,7 +303,7 @@
     font-size: 14px !important;
 }
 
-@media screen and (min-width: 992px){
+/* @media screen and (min-width: 992px){
     .pad-1 {
         padding-top: -5vh;
     }   
@@ -301,4 +316,4 @@
     .pad-4 {
         padding-top: 24vh;
     }   
-}
+} */
