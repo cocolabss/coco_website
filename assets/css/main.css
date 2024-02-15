@@ -3495,3 +3495,7 @@ section {
     font-size: 2rem;
   }
 }
+
+.bold-title {
+  font-weight: 500;
+}
