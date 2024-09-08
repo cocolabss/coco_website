@@ -1,241 +1,127 @@
-/**
-* Website Name: Coco Labs Website
-* Website URL: https://cocolabss.github.io/coco_website/
-* Author: Coco Labs S.A.S - 2023
-*/
+window.addEventListener('DOMContentLoaded', event => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const burgerIcon = document.querySelector('.burger-icon');
+  const closeIcon = document.querySelector('.close-icon');
+  const menuItems = document.querySelectorAll('.menu-item');
 
-// función para efecto de texto inicial
-window.onload = function() {
-  // Obtener el elemento de texto
-  const textElement = document.getElementById('loading-text');
-  
-  // Obtener las palabras del texto
-  const words = textElement.textContent.split(' ');
+  const toggleMenu = () => {
+    mobileMenu.classList.toggle('hidden');
+    burgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  }
 
-  // Crear un array de palabras con sus respectivos elementos <span>
-  const wordSpans = words.map((word, index) => {
-    // Aplicar cursiva solo a la primera palabra
-    const fontStyle = index === 0 ? 'italic' : 'normal';
-    return `<span class="word" style="font-style: ${fontStyle};">${word}</span>`;
-  });
+  burgerBtn.addEventListener('click', toggleMenu);
 
-  // Reemplazar el contenido del elemento con las palabras coloreadas
-  textElement.innerHTML = wordSpans.join(' ');
-
-  // Cambiar el color de las palabras de gris a negro palabra por palabra
-  let delay = 0;
-  const wordElements = document.querySelectorAll('.word');
-  wordElements.forEach((wordElement, index) => {
-    setTimeout(() => {
-      wordElement.style.color = 'black';
-    }, delay);
-    delay += 300; // Cambia esta cantidad para ajustar la velocidad de transición
-  });
-};
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  "use strict";
-
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  menuItems.forEach(item => item.addEventListener('click', () => {
+    if (!mobileMenu.classList.contains('hidden')) {
+      toggleMenu();
     }
+  }));
+
+  const staff = [
+    {
+      image: "assets/img/team/natalia.svg",
+      name: 'Natalia Schultz',
+      role: 'CEO - Founder',
+    },
+    {
+      image: "assets/img/team/luis.svg",
+      name: 'Luis Gómez',
+      role: 'CTO - Founder',
+    },
+    {
+      image: "assets/img/team/ana.svg",
+      name: 'Ana María Duarte',
+      role: 'Director de arte',
+    },
+    {
+      image: "assets/img/team/leo.svg",
+      name: 'Leopoldo Martin',
+      role: 'UX / UI',
+    },
+    {
+      image: "assets/img/team/rico.svg",
+      name: 'Luis Rico',
+      role: 'Desarrollador',
+    },
+    {
+      image: "assets/img/team/jeison.svg",
+      name: 'Jeison Gómez',
+      role: 'Desarrollador',
+    },
+  ];
+
+  const staffIndexInput = document.querySelector('.staff-index');
+  const firstStaffImg = document.querySelector('.first-staff-img');
+  const secondStaffImg = document.querySelector('.second-staff-img');
+  const firstStaffName = document.querySelector('.first-staff-name');
+  const secondStaffName = document.querySelector('.second-staff-name');
+  const firstStaffRole = document.querySelector('.first-staff-role');
+  const secondStaffRole = document.querySelector('.second-staff-role');
+  const staffPrev = document.querySelector('.staff-prev');
+  const staffNext = document.querySelector('.staff-next');
+
+  const updateStaff = (getNewIndex) => {
+    const currentIndex = parseInt(staffIndexInput.value);
+    const newIndex = getNewIndex(currentIndex);
+    const update = (img, name, role, staffMember) => {
+      img.src = staffMember.image;
+      name.textContent = staffMember.name;
+      role.textContent = staffMember.role;
+    };
+    staffIndexInput.value = newIndex;
+    update(firstStaffImg, firstStaffName, firstStaffRole, staff[newIndex]);
+    update(secondStaffImg, secondStaffName, secondStaffRole, staff[newIndex + 1]);
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  staffPrev.addEventListener('click', () => updateStaff(index => index - 2 < 0 ? staff.length - 2 : index - 2));
+  staffNext.addEventListener('click', () => updateStaff(index => index + 2 >= staff.length ? 0 : index + 2));
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  const modal = document.getElementById('modal');
+  const modalTitle = document.querySelector('.modal-title');
+  const modalMessage = document.querySelector('.modal-message');
+  const sendContactFormBtn = document.getElementById('sendBtn');
+  const closeModalBtn = document.getElementById('closeModal');
 
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+  const showModal = (title, message) => {
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    modal.classList.remove('hidden');
+  };
+  const closeModal = () => modal.classList.add('hidden');
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
-  const selectBody = document.querySelector('body');
-  const selectHeader = document.querySelector('#header');
-
-  function toggleScrolled() {
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-  }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Scroll up sticky header to headers with .scroll-up-sticky class
-   */
-  let lastScrollTop = 0;
-  window.addEventListener('scroll', function() {
-    if (!selectHeader.classList.contains('scroll-up-sticky')) return;
-
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > selectHeader.offsetHeight) {
-      selectHeader.style.setProperty('position', 'sticky', 'important');
-      selectHeader.style.top = `-${header.offsetHeight + 50}px`;
-    } else if (scrollTop > selectHeader.offsetHeight) {
-      selectHeader.style.setProperty('position', 'sticky', 'important');
-      selectHeader.style.top = "0";
-    } else {
-      selectHeader.style.removeProperty('top');
-      selectHeader.style.removeProperty('position');
+  sendContactFormBtn.addEventListener('click', () => {
+    const payload = {
+      name: document.getElementById("contactName").value,
+      email: document.getElementById("contactEmail").value,
+      phone: document.getElementById("contactPhone").value,
+      message: document.getElementById("contactMessage").value,
+    };
+    const isEmpty = (str) => /^\s*$/.test(str);
+    if (isEmpty(payload.name) || (isEmpty(payload.email) && isEmpty(payload.phone)) || isEmpty(payload.message)) {
+      showModal('Información', 'Debes proporcionar por lo menos tu nombre, algún dato de contacto (email o teléfono) y un mensaje.');
+      return;
     }
-    lastScrollTop = scrollTop;
-  });
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+    fetch('https://6dcqn8jeaf.execute-api.us-east-2.amazonaws.com/prod/contact-us', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: document.getElementById("contactName").value,
+        email: document.getElementById("contactEmail").value,
+        phone: document.getElementById("contactPhone").value,
+        message: document.getElementById("contactMessage").value,
+      }),
+    }).then(response => {
+      if (response.ok) {
+        showModal('Información', 'El formulario ha sido enviado con éxito. Pronto nos pondremos en contacto contigo.');
+      } else {
+        showModal('Error', 'Ha ocurrido un error al enviar el formulario. Por favor intenta de nuevo.');
       }
-    });
-
+    }).catch(() => showModal('Error', 'Ha ocurrido un error al enviar el formulario. Por favor intenta de nuevo.'));
   });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .has-dropdown i').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      if (document.querySelector('.mobile-nav-active')) {
-        e.preventDefault();
-        this.parentNode.classList.toggle('active');
-        this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-        e.stopImmediatePropagation();
-      }
-    });
-  });
-
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
+  closeModalBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
     }
   });
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Init isotope layout and filters
-   */
-  function initIsotopeLayout() {
-    document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-      let initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-
-      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-        filters.addEventListener('click', function() {
-          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-          this.classList.add('filter-active');
-          initIsotope.arrange({
-            filter: this.getAttribute('data-filter')
-          });
-          if (typeof aosInit === 'function') {
-            aosInit();
-          }
-        }, false);
-      });
-
-    });
-  }
-  window.addEventListener('load', initIsotopeLayout);
-
-  /**
-   * Frequently Asked Questions Toggle
-   */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
-    });
-  });
-
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll('.swiper').forEach(function(swiper) {
-      let config = JSON.parse(swiper.querySelector('.swiper-config').innerHTML.trim());
-      new Swiper(swiper, config);
-    });
-  }
-  window.addEventListener('load', initSwiper);
-
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
-  }
-  window.addEventListener('load', aosInit);
-
 });
