@@ -1,12 +1,9 @@
 /**
 * Website Name: Coco Labs Website
-* Website URL: https://cocolabss.github.io/coco_website/
-* Author: Coco Labs S.A.S - 2023
+* Website URL: https://cocolabs.com.co/
+* Author: Coco Labs S.A.S - 2024
 */
 
-/*--------------------------------------------------------------
-# Font & Color Variables
---------------------------------------------------------------*/
 /* Fuente Fira Code Bold */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code');
 
@@ -46,23 +43,4 @@
 .highlight-blue>span {
     position: relative;
     z-index: 2;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #58320E;
-    font-size: 16px;
-    color: #58320E;
-    margin-right: 10px;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
 }
