@@ -4,9 +4,15 @@ import MainLayout from "../components/MainLayout";
 import { blogs } from "../utils/dataBlog";
 
 const ProjectsView = () => {
-	const [selectedBlog, setSelectedBlog] = useState(null);
+	interface Blog {
+		id: number;
+		title: string;
+		description: string;
+	}
 
-	const handleOpenModal = (blog) => {
+	const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
+
+	const handleOpenModal = (blog: Blog) => {
 		setSelectedBlog(blog);
 	};
 
