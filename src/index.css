@@ -1,0 +1,89 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #835730;
+}
+
+::-webkit-scrollbar-track {
+  background: #ae9076;
+}
+
+.background-image-1,
+.background-image-2,
+.background-image-3,
+.background-image-4,
+.background-image-5,
+.background-image-6 {
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.background-image-2,
+.background-image-3,
+.background-image-4,
+.background-image-5,
+.background-image-6 {
+  background-size: cover;
+  background-position: left center;
+}
+
+.background-image-1 {
+  background-size: contain;
+  background-position: center;
+}
+
+.background-image-1, .background-image-2 {
+  background-image: url('./assets/images/bg_teal_1.png');
+}
+
+.background-image-3 {
+  background-image: url('./assets/images/bg_brown_1.png');
+}
+
+.background-image-4 {
+  background-image: url('./assets/images/bg_brown_2.png');
+}
+
+.background-image-5 {
+  background-image: url('./assets/images/bg_teal_2.png');
+}
+
+.background-image-6 {
+  background-image: url('./assets/images/bg_teal_3.png');
+}
+
+.photo-container {
+  margin-bottom: -200px;
+}
+
+.step-card {
+  position: relative;
+}
+
+.step-card:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  color: #8B4513;
+  font-size: 2rem;
+}
+
+@media (max-width:768px) {
+  .step-card:not(:last-child)::after {
+    content: '↓';
+    right: 50%;
+    top: auto;
+    bottom: -45px;
+    transform: translateX(50%);
+  }
+}
