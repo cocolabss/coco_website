@@ -1,140 +1,72 @@
-import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+import { routeTexts } from '../utils/dataRouteTexts';
 
-import LogoWhite from "../assets/images/logo_white.png";
+import Navbar from "./Navbar";
+import Button from '../components/Button';
 
-const Navbar = () => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-	const [navbarClass, setNavbarClass] = useState("bg-transparent");
+import BannerHome from '../assets/videos/banner_home.mp4';
 
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 50) {
-				setNavbarClass("bg-brown text-white");
-			} else {
-				setNavbarClass("bg-transparent");
-			}
-		};
+const Header = () => {
+	const location = useLocation();
 
-		window.addEventListener("scroll", handleScroll);
+	type RouteKey = keyof typeof routeTexts;
 
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
-
-	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
-
-	const toggleDropdown = () => {
-		setIsDropdownOpen(!isDropdownOpen);
-	};
+	const currentRoute: RouteKey = location.pathname as RouteKey;
+	const { img, title, description1, description2, buttonText } = routeTexts[currentRoute] || routeTexts['/'];
 
 	return (
-		<nav
-			id="navbar"
-			className={`fixed top-0 left-0 w-full shadow-md z-50 transition-colors duration-300 ${navbarClass}`}
-		>
-			<div className="px-6 md:px-24 flex justify-between items-center h-16 md:h-20">
-				<img src={LogoWhite} alt="Logo" className="w-[150px] md:w-[200px]" />
-				<ul className="hidden md:flex space-x-12 text-white text-xl">
-					<li>
-						<a href="/" className="hover:text-teal">
-							Nosotros
-						</a>
-					</li>
-					<li className="relative">
-						<button onClick={toggleDropdown} className="hover:text-teal focus:outline-none">
-							Servicios
-						</button>
-						{isDropdownOpen && (
-							<ul className="absolute left-0 bg-brown text-white text-lg space-y-4 mt-2 p-4 w-[300px]">
-								<li>
-									<a href="/design" className="hover:text-teal block">
-										Diseño y desarrollo de nuevos productos
-									</a>
-								</li>
-								<li>
-									<a href="/optimization" className="hover:text-teal block">
-										Optmización de productos de software
-									</a>
-								</li>
-								<li>
-									<a href="/modernization" className="hover:text-teal block">
-										Modernización de sistemas
-									</a>
-								</li>
-							</ul>
-						)}
-					</li>
-					<li>
-						<a href="/projects" className="hover:text-teal">
-							Proyectos
-						</a>
-					</li>
-					<li>
-						<a href="/contact" className="hover:text-teal">
-							Contáctenos
-						</a>
-					</li>
-				</ul>
+		<>
+			<Navbar />
 
-				<button
-					onClick={toggleMenu}
-					className="md:hidden text-white text-2xl focus:outline-none"
-				>
-					<i className="fas fa-bars"></i>
-				</button>
-			</div>
+			<header className="relative">
+				{currentRoute === '/' ? (
+					<div className="relative w-full h-[800px]">
+						<video
+							autoPlay
+							loop
+							muted
+							className="absolute inset-0 w-full h-full object-cover"
+						>
+							<source src={BannerHome} type="video/mp4" />
+						</video>
 
-			{isMenuOpen && (
-				<div className="bg-brown text-white md:hidden">
-					<ul className="flex flex-col space-y-6 py-6 text-center text-lg">
-						<li>
-							<a href="/" className="hover:text-teal">
-								Nosotros
-							</a>
-						</li>
-						<li className="relative">
-							<button onClick={toggleDropdown} className="hover:text-teal focus:outline-none">
-								Servicios
-							</button>
-							{isDropdownOpen && (
-								<ul className="bg-brown text-white text-lg space-y-4 mt-2 p-4">
-									<li>
-										<a href="/design" className="hover:text-teal block">
-											Diseño y desarrollo de nuevos productos
-										</a>
-									</li>
-									<li>
-										<a href="/optimization" className="hover:text-teal block">
-											Optmización de productos de software
-										</a>
-									</li>
-									<li>
-										<a href="/modernization" className="hover:text-teal block">
-											Modernización de sistemas
-										</a>
-									</li>
-								</ul>
-							)}
-						</li>
-						<li>
-							<a href="/projects" className="hover:text-teal">
-								Proyectos
-							</a>
-						</li>
-						<li>
-							<a href="/contact" className="hover:text-teal">
-								Contáctenos
-							</a>
-						</li>
-					</ul>
-				</div>
-			)}
-		</nav>
+						<div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-black bg-opacity-50 px-6">
+							<h1 className="text-white text-3xl md:text-5xl font-bold leading-tight">
+								{title}
+							</h1>
+							<p className="text-white mt-4 text-lg md:text-2xl">
+								{description1}
+							</p>
+							<Button text={buttonText} background="bg-teal" />
+						</div>
+					</div>
+				) : (
+					<div>
+						<img src={img} alt="Background" className="w-full h-[800px] object-cover" />
+						<div className="absolute inset-0 bg-white">
+							<div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center text-center md:text-left h-full px-12 md:px-24 text-brown">
+								<div></div>
+								<div>
+									<h1 className="background-image-2 text-2xl md:text-4xl" style={{ fontWeight: 600 }}>
+										{title}
+									</h1>
+									<h2 className="background-image-3 text-lg md:text-2xl" style={{ fontWeight: 600 }}>
+										{description1}
+									</h2>
+									<h2 className="background-image-4 text-lg md:text-2xl mt-[-20px]" style={{ fontWeight: 600 }}>
+										{description2}
+									</h2>
+									<div className="flex justify-center">
+										<Button text={buttonText} background="bg-teal" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				)}
+			</header>
+		</>
 	);
 };
 
-export default Navbar;
+export default Header;
