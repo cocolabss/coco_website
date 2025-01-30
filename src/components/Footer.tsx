@@ -32,12 +32,24 @@ const Footer = () => {
 					<h3 className="text-xl md:text-3xl text-brown" style={{ fontWeight: 500 }}>
 						Contáctanos
 					</h3>
-					<p className="text-brown text-lg md:text-2xl hover:underline cursor-pointer">
-						+57 311 315 7486
-					</p>
-					<p className="text-brown text-lg md:text-2xl hover:underline cursor-pointer">
-						contacto@empresa.com
-					</p>
+					<div className="space-y-2">
+						<p className="text-brown text-lg md:text-2xl hover:underline cursor-pointer">
+							<a
+								href="https://wa.me/573113157486?text=Hola,%20me%20gustaría%20obtener%20más%20información."
+								className="flex items-center justify-center md:justify-end"
+							>
+								+57 301 330 1908 <i className="fab fa-whatsapp ml-2"></i>
+							</a>
+						</p>
+						<p className="text-brown text-lg md:text-2xl hover:underline cursor-pointer">
+							<a
+								href="mailto:contacto@empresa.com?subject=Consulta&body=Hola, me gustaría obtener más información."
+								className="flex items-center justify-center md:justify-end"
+							>
+								contacto@empresa.com <i className="fas fa-envelope ml-2"></i> 
+							</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</footer>
