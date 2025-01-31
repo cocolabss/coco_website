@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Button from '../components/Button';
 import MainLayout from '../components/MainLayout';
 import Information from '../components/Information';
@@ -12,14 +14,28 @@ import CocoLeft from '../assets/images/coco_left.png'
 import CocoRight from '../assets/images/coco_right.png'
 
 const HomeView = () => {
+	const [nombre, setNombre] = useState("");
+	const [correo, setCorreo] = useState("");
+	const [mensaje, setMensaje] = useState("");
+
+	const handleSubmit = (event: { preventDefault: () => void; }) => {
+		event.preventDefault();
+		const numeroWhatsApp = "573013301908";
+
+		const mensajeWhatsApp = `Hola, mi nombre es *${nombre}*.\nCorreo: *${correo}*.\n\n${mensaje}`;
+		const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+		window.open(url, "_blank");
+	};
+
 	return (
 		<MainLayout>
 			<Information showTitle={true}/>
 
-			<section className="pb-16 px-6 md:px-24 bg-brownlight">
+			<section className="mt-12 pb-16 px-6 md:px-48 bg-brownlight">
 				<div className="flex flex-row justify-center md:justify-start">
 					<h2
-						className="relative background-image-2 w-[250px] md:w-[350px] text-center text-2xl md:text-4xl text-brown top-[-20px]"
+						className="relative background-image-2 w-[250px] md:w-[300px] text-center text-xl md:text-2xl text-brown top-[-20px]"
 						style={{ fontWeight: 600 }}
 					>
 						Coco Labs
@@ -31,10 +47,10 @@ const HomeView = () => {
 					</h2>
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 text-brown justify-center items-center">
-					<h3 className="text-xl md:text-3xl mt-6 md:mt-0 text-brown text-center" style={{ fontWeight: 500 }}>
+					<h3 className="text-lg md:text-xl mt-6 md:mt-0 text-brown text-center" style={{ fontWeight: 500 }}>
 						Somos proyección para su negocio
 					</h3>
-					<p className="text-center md:text-left text-lg md:text-2xl">
+					<p className="text-center md:text-left text-sm md:text-lg">
 						En Coco Labs SAS transformamos tus ideas en software innovador, personalizado y respaldado con garantías claras. Nuestro enfoque se centra en entregas rápidas y flexibles, acompañándote de principio a fin para asegurar que cada solución supere tus expectativas. Creamos tecnología diseñada exclusivamente para ti, con la tranquilidad de contar con un soporte garantizado que impulsa tu éxito.
 					</p>
 				</div>
@@ -45,10 +61,10 @@ const HomeView = () => {
 							alt="Natalia Schmitz"
 							className="mx-auto w-52 object-cover"
 						/>
-						<h3 className="text-xl mt-4" style={{ fontWeight: 600 }}>
+						<h3 className="text-lg mt-4" style={{ fontWeight: 600 }}>
 							Natalia Schmitz
 						</h3>
-						<p>CEO - Founder</p>
+						<p className='text-sm'>CEO - Founder</p>
 					</div>
 					<div>
 						<img
@@ -56,10 +72,10 @@ const HomeView = () => {
 							alt="Luis Gómez"
 							className="mx-auto w-52 object-cover"
 						/>
-						<h3 className="text-xl mt-4" style={{ fontWeight: 600 }}>
+						<h3 className="text-lg mt-4" style={{ fontWeight: 600 }}>
 							Luis Gómez
 						</h3>
-						<p>CTO - Founder</p>
+						<p className='text-sm'>CTO - Founder</p>
 					</div>
 					<div>
 						<img
@@ -67,16 +83,16 @@ const HomeView = () => {
 							alt="Ana María Duarte"
 							className="mx-auto w-52 object-cover"
 						/>
-						<h3 className="text-xl mt-4" style={{ fontWeight: 600 }}>
+						<h3 className="text-lg mt-4" style={{ fontWeight: 600 }}>
 							Ana María Duarte
 						</h3>
-						<p>Project Management /<br className="hidden md:block" />Directora Creativa</p>
+						<p className='text-sm'>Project Management /<br className="hidden md:block" />Directora Creativa</p>
 					</div>
 				</div>
 			</section>
 
-			<section className="pt-[250px] pb-24 md:pb-16 px-6 md:px-24 text-center">
-				<div className="flex flex-col items-center text-2xl md:text-4xl text-brown top-[-20px]">
+			<section className="pt-[250px] pb-24 md:pb-16 px-6 md:px-48 text-center">
+				<div className="flex flex-col items-center text-xl md:text-2xl text-brown top-[-20px]">
 					<h2 className="background-image-3" style={{ fontWeight: 600 }}>
 						Soluciones personalizadas
 					</h2>
@@ -88,7 +104,7 @@ const HomeView = () => {
 					<div className="text-center md:text-left">
 						<div className="flex justify-center md:justify-start">
 							<h3
-								className="background-image-2 text-xl md:text-3xl text-brown"
+								className="background-image-2 text-lg md:text-xl text-brown"
 								style={{ fontWeight: 500 }}
 							>
 								<img
@@ -99,7 +115,7 @@ const HomeView = () => {
 								Arquitectura y consultoría de proyectos de software
 							</h3>
 						</div>
-						<p className="mt-4 text-lg md:text-2xl text-teal" style={{ lineHeight: 2 }}>
+						<p className="mt-4 text-sm md:text-lg text-teal" style={{ lineHeight: 2 }}>
 							Optimiza tu negocio con nuestras soluciones de consultoría y
 							arquitectura de software. Diseñamos sistemas escalables, eficientes
 							y personalizados para cubrir tus necesidades específicas. Confía en
@@ -108,12 +124,12 @@ const HomeView = () => {
 						</p>
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 mt-12">
-					<img src={CocoLeft} alt="Coco" className="h-[500px] hidden md:block"/>
+				<div className="grid grid-cols-1 md:grid-cols-2 mt-20">
+					<img src={CocoLeft} alt="Coco" className="h-[400px] hidden md:block"/>
 					<div className="flex flex-col items-center md:items-end text-center md:text-right">
 						<div className="flex justify-center md:justify-start">
 							<h3
-								className="background-image-3 text-xl md:text-3xl text-teal"
+								className="background-image-3 text-lg md:text-xl text-teal"
 								style={{ fontWeight: 500 }}
 							>
 								<img
@@ -124,7 +140,7 @@ const HomeView = () => {
 								Diseño de aplicaciones web o móvil
 							</h3>
 						</div>
-						<p className="mt-4 text-lg md:text-2xl text-brown" style={{ lineHeight: 2 }}>
+						<p className="mt-4 text-sm md:text-lg text-brown" style={{ lineHeight: 2 }}>
 							En Coco Labs creamos soluciones digitales a medida para optimizar
 							procesos y mejorar la experiencia del usuario. Desarrollamos
 							aplicaciones web intuitivas, accesibles desde cualquier lugar y
@@ -134,11 +150,11 @@ const HomeView = () => {
 						</p>
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 mt-12">
+				<div className="grid grid-cols-1 md:grid-cols-2 mt-20">
 					<div className="text-center md:text-left">
 						<div className="flex justify-center md:justify-start">
 							<h3
-								className="background-image-2 text-xl md:text-3xl text-brown"
+								className="background-image-2 text-lg md:text-xl text-brown"
 								style={{ fontWeight: 500 }}
 							>
 								<img
@@ -149,7 +165,7 @@ const HomeView = () => {
 								Integración de sistemas de software
 							</h3>
 						</div>
-						<p className="mt-4 text-lg md:text-2xl text-teal" style={{ lineHeight: 2 }}>
+						<p className="mt-4 text-sm md:text-lg text-teal" style={{ lineHeight: 2 }}>
 							Conecta tus plataformas y optimiza tus operaciones con nuestras soluciones de integración de sistemas de
 							software. Integramos aplicaciones, bases de datos y herramientas empresariales para garantizar un flujo de
 							información eficiente y sin interrupciones. Impulsa la productividad y elimina barreras tecnológicas con
@@ -157,15 +173,15 @@ const HomeView = () => {
 						</p>
 					</div>
 					<div className="hidden md:flex justify-end">
-						<img src={CocoRight} alt="Coco" className="h-[500px]" />
+						<img src={CocoRight} alt="Coco" className="h-[400px]" />
 					</div>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-2 mt-12">
+				<div className="grid grid-cols-1 md:grid-cols-2 mt-20 mb-12">
 					<div></div>
 					<div className="flex flex-col items-center md:items-end text-center md:text-right">
 						<div className="flex justify-center md:justify-start">
 							<h3
-								className="background-image-3 text-xl md:text-3xl text-teal"
+								className="background-image-3 text-lg md:text-xl text-teal"
 								style={{ fontWeight: 500 }}
 							>
 								<img
@@ -176,7 +192,7 @@ const HomeView = () => {
 								Automatización de procesos por medio de soluciones
 							</h3>
 						</div>
-						<p className="mt-4 text-lg md:text-2xl text-brown" style={{ lineHeight: 2 }}>
+						<p className="mt-4 text-sm md:text-lg text-brown" style={{ lineHeight: 2 }}>
 							Optimiza tiempos, reduce costos y elimina errores con nuestras soluciones de automatización de procesos.
 							Diseñamos sistemas personalizados para agilizar tareas repetitivas y mejorar la eficiencia operativa de tu
 							empresa. Lleva tu negocio al siguiente nivel con tecnología que trabaja por ti.
@@ -186,10 +202,10 @@ const HomeView = () => {
 				<Button text="Habla con un consultor" background="bg-brown" />
 			</section>
 
-			<section className="pb-16 px-12 md:px-24 bg-teallight">
+			<section id='contact' className="pb-16 px-12 md:px-48 bg-teallight mt-12">
 				<div className="flex flex-row justify-center md:justify-start">
 					<h2
-						className="relative background-image-4 w-[250px] md:w-[350px] text-2xl md:text-4xl text-center text-brown top-[-20px] z-10"
+						className="relative background-image-4 w-[250px] md:w-[350px] text-xl md:text-2xl text-center text-brown top-[-20px] z-10"
 						style={{ fontWeight: 600 }}
 					>
 						Contáctanos
@@ -201,45 +217,51 @@ const HomeView = () => {
 					</h2>
 				</div>
 				<div className="mt-8">
-					<form className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 text-lg md:text-2xl">
+					<form
+						className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 text-sm md:text-lg"
+						onSubmit={handleSubmit}
+					>
 						<div className="flex flex-col space-y-4 md:space-y-8">
 							<label className="block">
-								<span className="text-brown" style={{ fontWeight: 500 }}>
-									Nombre
-								</span>
+								<span className="text-brown font-medium">Nombre</span>
 								<input
 									type="text"
 									placeholder="Tu nombre"
 									className="mt-2 block py-3 px-3 md:px-6 w-full rounded-lg border-gray-300 shadow-sm focus:ring focus:ring-teal-400 focus:border-teal-400"
+									value={nombre}
+									onChange={(e) => setNombre(e.target.value)}
+									required
 								/>
 							</label>
 							<label className="block">
-								<span className="text-brown" style={{ fontWeight: 500 }}>
-									Correo Electrónico
-								</span>
+								<span className="text-brown font-medium">Correo Electrónico</span>
 								<input
 									type="email"
 									placeholder="Tu correo electrónico"
 									className="mt-2 block py-3 px-3 md:px-6 w-full rounded-lg border-gray-300 shadow-sm focus:ring focus:ring-teal-400 focus:border-teal-400"
+									value={correo}
+									onChange={(e) => setCorreo(e.target.value)}
+									required
 								/>
 							</label>
 						</div>
 
 						<div className="flex flex-col space-y-4">
 							<label className="block h-full">
-								<span className="text-brown" style={{ fontWeight: 500 }}>
-									Mensaje
-								</span>
+								<span className="text-brown font-medium">Mensaje</span>
 								<textarea
 									placeholder="Escribe tu mensaje aquí"
 									rows={5}
 									className="mt-2 block py-3 px-3 md:px-6 w-full rounded-lg border-gray-300 shadow-sm focus:ring focus:ring-teal-400 focus:border-teal-400"
+									value={mensaje}
+									onChange={(e) => setMensaje(e.target.value)}
+									required
 								></textarea>
 							</label>
 							<div className="flex justify-end">
 								<button
 									type="submit"
-									className="mt-2 py-3 px-6 bg-brown text-white rounded-lg" style={{ fontWeight: 500 }}
+									className="mt-2 py-3 px-6 bg-brown text-white rounded-lg text-sm font-medium"
 								>
 									Enviar
 								</button>
