@@ -15,6 +15,9 @@ module.exports = {
 				teallight: {
 					DEFAULT: '#A4D7DC',
 				},
+				tealbg: {
+					DEFAULT: '#c8e7ea',
+				},
 				brown: {
 					DEFAULT: '#835730',
 				},
