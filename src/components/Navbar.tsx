@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { routeTexts } from '../utils/dataRouteTexts';
 
@@ -13,6 +13,8 @@ const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const [navbarClass, setNavbarClass] = useState("bg-transparent");
+
+	const dropdownRef = useRef<HTMLUListElement>(null);
 
 	const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		event.preventDefault();
@@ -63,6 +65,20 @@ const Navbar = () => {
 		setIsDropdownOpen(!isDropdownOpen);
 	};
 
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+				setIsDropdownOpen(false);
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
+
 	return (
 		<nav
 			id="navbar"
@@ -99,11 +115,14 @@ const Navbar = () => {
 							Servicios
 						</button>
 						{isDropdownOpen && (
-							<ul className="absolute left-0 bg-brown text-white text-lg space-y-4 mt-2 p-4 w-[300px]">
+							<ul
+								ref={dropdownRef}
+								className="absolute left-0 bg-gray-100 text-white text-lg space-y-4 mt-2 p-4 w-[300px]"
+							>
 								<li>
 									<a
 										href="/design"
-										className="text-white hover:text-teal block"
+										className='text-teal hover:text-brown block'
 									>
 										Diseño y desarrollo de nuevos productos
 									</a>
@@ -111,10 +130,7 @@ const Navbar = () => {
 								<li>
 									<a
 										href="/optimization"
-										className={`${scrolled ? 'text-teal hover:text-brown' : currentRoute === '/'
-											? 'text-white hover:text-teal'
-											: 'text-teal hover:text-brown'
-											} block`}
+										className='text-teal hover:text-brown block'
 									>
 										Optimización de productos de software
 									</a>
@@ -122,10 +138,7 @@ const Navbar = () => {
 								<li>
 									<a
 										href="/modernization"
-										className={`${scrolled ? 'text-teal hover:text-brown' : currentRoute === '/'
-											? 'text-white hover:text-teal'
-											: 'text-teal hover:text-brown'
-											} block`}
+										className='text-teal hover:text-brown block'
 									>
 										Modernización de sistemas
 									</a>
@@ -167,31 +180,31 @@ const Navbar = () => {
 			</div>
 
 			{isMenuOpen && (
-				<div className="bg-brown text-white md:hidden">
+				<div className="bg-gray-100 text-teal md:hidden">
 					<ul className="flex flex-col space-y-6 py-6 text-center text-lg">
 						<li>
-							<a href="/" className="hover:text-teal">
+							<a href="/" className="hover:text-brown">
 								Nosotros
 							</a>
 						</li>
 						<li className="relative">
-							<button onClick={toggleDropdown} className="hover:text-teal focus:outline-none">
+							<button onClick={toggleDropdown} className="hover:text-brown focus:outline-none">
 								Servicios
 							</button>
 							{isDropdownOpen && (
-								<ul className="bg-brown text-white text-lg space-y-4 mt-2 p-4">
+								<ul className="text-lg space-y-4 mt-2 p-4">
 									<li>
-										<a href="/design" className="hover:text-teal block">
+										<a href="/design" className="hover:text-brown block">
 											Diseño y desarrollo de nuevos productos
 										</a>
 									</li>
 									<li>
-										<a href="/optimization" className="hover:text-teal block">
+										<a href="/optimization" className="hover:text-brown block">
 											Optmización de productos de software
 										</a>
 									</li>
 									<li>
-										<a href="/modernization" className="hover:text-teal block">
+										<a href="/modernization" className="hover:text-brown block">
 											Modernización de sistemas
 										</a>
 									</li>
@@ -199,12 +212,12 @@ const Navbar = () => {
 							)}
 						</li>
 						<li>
-							<a href="/projects" className="hover:text-teal">
+							<a href="/projects" className="hover:text-brown">
 								Proyectos
 							</a>
 						</li>
 						<li>
-							<a onClick={handleContactClick} className="hover:text-teal">
+							<a onClick={handleContactClick} className="hover:text-brown">
 								Contáctenos
 							</a>
 						</li>

@@ -32,7 +32,7 @@ const HomeView = () => {
 		<MainLayout>
 			<Information showTitle={true}/>
 
-			<section className="mt-12 pb-16 px-6 md:px-48 bg-brownlight">
+			<section className="mt-12 pb-16 px-6 md:mx-48 bg-brownlight">
 				<div className="flex flex-row justify-center md:justify-start">
 					<h2
 						className="relative background-image-2 w-[250px] md:w-[300px] text-center text-xl md:text-2xl text-brown top-[-20px]"
@@ -50,11 +50,11 @@ const HomeView = () => {
 					<h3 className="text-lg md:text-xl mt-6 md:mt-0 text-brown text-center" style={{ fontWeight: 500 }}>
 						Somos proyección para su negocio
 					</h3>
-					<p className="text-center md:text-left text-sm md:text-lg">
+					<p className="text-center md:text-justify text-sm md:text-lg md:pr-12">
 						En Coco Labs SAS transformamos tus ideas en software innovador, personalizado y respaldado con garantías claras. Nuestro enfoque se centra en entregas rápidas y flexibles, acompañándote de principio a fin para asegurar que cada solución supere tus expectativas. Creamos tecnología diseñada exclusivamente para ti, con la tranquilidad de contar con un soporte garantizado que impulsa tu éxito.
 					</p>
 				</div>
-				<div className="mt-12 md:mt-24 flex flex-col md:flex-row space-x-0 md:space-x-24 space-y-12 md:space-y-0 justify-center text-center text-brown photo-container">
+				<div className="mt-12 md:mt-16 flex flex-col md:flex-row space-x-0 md:space-x-24 space-y-12 md:space-y-0 justify-center text-center text-brown photo-container">
 					<div>
 						<img
 							src={Natalia}
@@ -199,10 +199,10 @@ const HomeView = () => {
 						</p>
 					</div>
 				</div>
-				<Button text="Habla con un consultor" background="bg-brown" />
+				<Button text="Habla con un consultor" background="bg-brown" onClick={() => window.open("https://wa.me/573013301908?text=Hola,%20me%20gustaría%20obtener%20más%20información.", "_blank")} />
 			</section>
 
-			<section id='contact' className="pb-16 px-12 md:px-48 bg-teallight mt-12">
+			<section id='contact' className="pb-16 px-12 md:mx-48 bg-teallight mt-12">
 				<div className="flex flex-row justify-center md:justify-start">
 					<h2
 						className="relative background-image-4 w-[250px] md:w-[350px] text-xl md:text-2xl text-center text-brown top-[-20px] z-10"
