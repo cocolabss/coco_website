@@ -65,7 +65,7 @@ const Information: React.FC<InformationProps> = ({ showTitle }) => {
 					</div>
 				</div>
 
-				<Button text="Habla con un consultor" background="bg-brown" />
+				<Button text="Habla con un consultor" background="bg-brown" onClick={() => window.open("https://wa.me/573013301908?text=Hola,%20me%20gustaría%20obtener%20más%20información.", "_blank")} />
 			</div>
 		</>
 	);

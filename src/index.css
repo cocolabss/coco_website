@@ -16,6 +16,22 @@
   background: #ae9076;
 }
 
+.scrollbar-teal::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar-teal::-webkit-scrollbar-track {
+  background: #8cdce2;
+}
+
+.scrollbar-teal::-webkit-scrollbar-thumb {
+  background: #a28164;
+}
+
+.scrollbar-teal::-webkit-scrollbar-thumb:hover {
+  background: #8cdce2;
+}
+
 .background-image-1,
 .background-image-2,
 .background-image-3,

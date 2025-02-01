@@ -37,7 +37,7 @@ const Header = () => {
 							<p className="text-white mt-4 text-lg md:text-xl">
 								{description1}
 							</p>
-							<Button text={buttonText} background="bg-teal" />
+							<Button text={buttonText} background="bg-teal" onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')} />
 						</div>
 					</div>
 				) : (
@@ -57,7 +57,7 @@ const Header = () => {
 										{description2}
 									</h2>
 									<div className="flex justify-center">
-										<Button text={buttonText} background="bg-teal" />
+										<Button text={buttonText} background="bg-teal" onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')} />
 									</div>
 								</div>
 							</div>

@@ -35,7 +35,7 @@ const Footer = () => {
 					<div className="space-y-2">
 						<p className="text-brown text-sm hover:underline cursor-pointer">
 							<a
-								href="https://wa.me/573013301908?text=Hola,%20me%20gustaría%20obtener%20más%20información."
+								href="https://wa.me/573013301908?text=Hola,%20me%20gustaría%20obtener%20más%20información." target='_blank'
 								className="flex items-center justify-center md:justify-end"
 							>
 								+57 301 330 1908 <i className="fab fa-whatsapp ml-2"></i>
@@ -43,10 +43,10 @@ const Footer = () => {
 						</p>
 						<p className="text-brown text-sm hover:underline cursor-pointer">
 							<a
-								href="mailto:contacto@empresa.com?subject=Consulta&body=Hola, me gustaría obtener más información."
+								href="mailto:cocolabssas@gmail.com?subject=Consulta&body=Hola, me gustaría obtener más información." target='_blank'
 								className="flex items-center justify-center md:justify-end"
 							>
-								contacto@empresa.com <i className="fas fa-envelope ml-2"></i> 
+								cocolabssas@gmail.com <i className="fas fa-envelope ml-2"></i>
 							</a>
 						</p>
 					</div>
