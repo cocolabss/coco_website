@@ -52,7 +52,7 @@ const FormContact = () => {
                             type="text"
                             placeholder="Tu nombre"
                             className="mt-2 block py-3 px-4 w-full rounded-none border-0
-                        bg-brown-600 text-white placeholder-brown-300
+                        bg-brown-600 text-brown placeholder-brown-300
                         focus:ring-2 focus:ring-blue focus:outline-none"
                             value={nombre}
                             onChange={(e) => setNombre(e.target.value)}
@@ -66,7 +66,7 @@ const FormContact = () => {
                             type="email"
                             placeholder="Tu correo electrónico"
                             className="mt-2 block py-3 px-4 w-full rounded-none border-0
-                        bg-brown-600 text-white placeholder-brown-300
+                        bg-brown-600 text-brown placeholder-brown-300
                         focus:ring-2 focus:ring-blue focus:outline-none"
                             value={correo}
                             onChange={(e) => setCorreo(e.target.value)}
@@ -80,7 +80,7 @@ const FormContact = () => {
                             placeholder="Escribe tu mensaje aquí"
                             rows={5}
                             className="mt-2 block py-3 px-4 w-full rounded-none border-0
-                        bg-brown-600 text-white placeholder-brown-300
+                        bg-brown-600 text-brown placeholder-brown-300
                         focus:ring-2 focus:ring-blue focus:outline-none"
                             value={mensaje}
                             onChange={(e) => setMensaje(e.target.value)}

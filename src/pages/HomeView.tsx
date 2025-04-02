@@ -149,7 +149,7 @@ const HomeView = () => {
                                 alt="Natalia Schmitz"
                                 className="w-32 h-32 mb-4"
                             />
-                            <h3 className="text-blue font-bold text-lg">Natalia Schmitz</h3>
+                            <h3 className="text-blue font-bold text-lg">Natalia Schultz</h3>
                             <p className="text-sm text-brown font-roboto">Founder</p>
                         </div>
 
@@ -189,17 +189,9 @@ const HomeView = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <h3 className="text-xl font-bold text-blue mb-3 mt-6">{post.title}</h3>
-                            <p className="text-brown text-justify font-roboto mb-6">
+                            <p className="text-brown text-justify font-roboto">
                                 {post.description}
                             </p>
-                            <div className="flex justify-end">
-                                <button className="flex items-center text-blue group">
-                                    <span className="opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                        Leer más
-                                    </span>
-                                    <FaChevronRight className="ml-2 group-hover:ml-4 transition-all duration-300" />
-                                </button>
-                            </div>
                         </div>
                     ))}
                 </div>
