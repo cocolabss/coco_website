@@ -7,16 +7,14 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['Fira Code', 'sans-serif'],
+                roboto: ['Roboto', 'sans-serif'],
 			},
 			colors: {
-				teal: {
-					DEFAULT: '#00C2D0',
-				},
-				teallight: {
-					DEFAULT: '#A4D7DC',
-				},
-				tealbg: {
-					DEFAULT: '#c8e7ea',
+                gray: {
+                    DEFAULT: '#F2F2F1',
+                },
+				blue: {
+                    DEFAULT: '#0376A3',
 				},
 				brown: {
 					DEFAULT: '#835730',

@@ -1,72 +1,196 @@
 import { useLocation } from 'react-router-dom';
 import { routeTexts } from '../utils/dataRouteTexts';
-
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./Navbar";
 import Button from '../components/Button';
+import BannerHome from '../assets/images/banner_home.png';
+import React from 'react';
 
-import BannerHome from '../assets/videos/banner_home.mp4';
+const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+};
+
+const transition = {
+    duration: 0.6,
+    ease: [0.6, -0.05, 0.01, 0.99]
+};
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+type MotionHTMLTags = keyof typeof motion extends infer K
+    ? K extends keyof JSX.IntrinsicElements
+    ? K
+    : never
+    : never;
+
+interface AnimatedTextProps {
+    text: string;
+    className?: string;
+    delay?: number;
+    as?: MotionHTMLTags;
+    style?: React.CSSProperties;
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({
+    text,
+    className,
+    delay = 0,
+    as = 'div',
+    style
+}) => {
+    const words = text.split(" ");
+
+    const MotionComponent = motion[as as keyof typeof motion] as React.ElementType;
+
+    return (
+        <MotionComponent
+            className={className}
+            style={style}
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            transition={{ delay }}
+        >
+            {words.map((word, index) => (
+                <React.Fragment key={index}>
+                    <motion.span
+                        style={{ display: 'inline-block' }}
+                        variants={fadeInUp}
+                        transition={transition}
+                    >
+                        {word}
+                    </motion.span>
+                    {index < words.length - 1 && ' '}
+                </React.Fragment>
+            ))}
+        </MotionComponent>
+    );
+};
+
+const AnimatedButton: React.FC<{
+    text: string;
+    onClick: () => void;
+    delay?: number;
+}> = ({ text, onClick, delay = 0 }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...transition, delay }}
+        >
+            <Button
+                text={text}
+                onClick={onClick}
+                variant='white'
+            />
+        </motion.div>
+    );
+};
 
 const Header = () => {
-	const location = useLocation();
+    const location = useLocation();
+    const isProjectDetailRoute = /^\/projects\/\d+$/.test(location.pathname);
 
-	type RouteKey = keyof typeof routeTexts;
+    if (isProjectDetailRoute) {
+        return <Navbar />;
+    }
 
-	const currentRoute: RouteKey = location.pathname as RouteKey;
-	const { img, title, description1, description2, buttonText } = routeTexts[currentRoute] || routeTexts['/'];
+    type RouteKey = keyof typeof routeTexts;
+    const currentRoute: RouteKey = location.pathname as RouteKey;
+    const { img, icon, title, description, buttonText } = routeTexts[currentRoute] || routeTexts['/'];
 
-	return (
-		<>
-			<Navbar />
+    return (
+        <>
+            <Navbar />
 
-			<header className="relative">
-				{currentRoute === '/' ? (
-					<div className="relative w-full h-[800px]">
-						<video
-							autoPlay
-							loop
-							muted
-							className="absolute inset-0 w-full h-full object-cover"
-						>
-							<source src={BannerHome} type="video/mp4" />
-						</video>
+            <header className="relative">
+                {currentRoute === '/' ? (
+                    <div
+                        className="pt-[35rem] pb-12 px-6 md:px-24 flex row justify-evenly items-center bg-cover bg-center"
+                        style={{ backgroundImage: `url(${BannerHome})` }}
+                    >
+                        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-start text-center md:text-start bg-black bg-opacity-50 px-6 md:px-48">
+                            <AnimatePresence>
+                                <AnimatedText
+                                    text={title}
+                                    className="text-white text-2xl md:text-4xl font-bold leading-tight"
+                                    as="h1"
+                                />
 
-						<div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-black bg-opacity-50 px-6 md:px-48">
-							<h1 className="text-white text-2xl md:text-4xl font-bold leading-tight">
-								{title}
-							</h1>
-							<p className="text-white mt-4 text-lg md:text-xl">
-								{description1}
-							</p>
-							<Button text={buttonText} background="bg-teal" onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')} />
-						</div>
-					</div>
-				) : (
-					<div>
-						<img src={img} alt="Background" className="w-full h-[700px] object-cover" />
-						<div className="absolute inset-0 bg-white">
-							<div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left h-full px-12 md:px-48 text-brown">
-								<div className='hidden md:block'></div>
-								<div className='md:w-[600px]'>
-									<h1 className="background-image-2 text-xl md:text-2xl" style={{ fontWeight: 600 }}>
-										{title}
-									</h1>
-									<h2 className="background-image-3 text-sm md:text-lg" style={{ fontWeight: 500 }}>
-										{description1}
-									</h2>
-									<h2 className="background-image-4 text-sm md:text-lg mt-[-20px]" style={{ fontWeight: 500 }}>
-										{description2}
-									</h2>
-									<div className="flex justify-center">
-										<Button text={buttonText} background="bg-teal" onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')} />
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				)}
-			</header>
-		</>
-	);
+                                <AnimatedText
+                                    text={description}
+                                    className="text-white mt-4 text-lg md:text-xl font-roboto mb-12"
+                                    delay={0.3}
+                                />
+
+                                {buttonText && (
+                                    <AnimatedButton
+                                        text={buttonText}
+                                        onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')}
+                                        delay={0.6}
+                                    />
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                ) : (
+                    <div
+                        className="pt-60 pb-32 px-6 md:px-24 flex flex-col md:flex-row space-y-12 md:space-y-0 justify-evenly items-center text-center md:text-start bg-cover bg-center"
+                        style={{ backgroundImage: `url(${img})` }}
+                    >
+                        <div className="text-white flex flex-col items-center md:items-start">
+                            <AnimatePresence>
+                                <AnimatedText
+                                    text={title}
+                                    className="text-5xl font-bold mb-4"
+                                    as="h1"
+                                />
+
+                                <AnimatedText
+                                    text={description}
+                                    className="mb-6 font-roboto"
+                                    style={{ fontWeight: 500 }}
+                                    delay={0.3}
+                                />
+
+                                {buttonText && (
+                                    <AnimatedButton
+                                        text={buttonText}
+                                        onClick={() => window.open('https://calendar.app.google/T7SAQckgiuHLcswj8', '_blank')}
+                                        delay={0.6}
+                                    />
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {icon && (
+                            <motion.div
+                                className="flex justify-center"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ ...transition, delay: 0.9 }}
+                            >
+                                <img
+                                    src={icon}
+                                    alt="Icono grande"
+                                    className="w-60 h-60 object-contain"
+                                />
+                            </motion.div>
+                        )}
+                    </div>
+                )}
+            </header>
+        </>
+    );
 };
 
 export default Header;

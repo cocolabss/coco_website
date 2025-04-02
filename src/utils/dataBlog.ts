@@ -1,23 +1,35 @@
-import Diseño from '../assets/images/design.png';
+import arquitecturaImage from '../assets/images/blog/arquitecturaproyecto_monitor.png';
+import diseñoImage from '../assets/images/blog/disenoaplicaciones_monitor.png';
+import integracionImage from '../assets/images/blog/integracionsistemas_monitor.png';
+import automatizacionImage from '../assets/images/blog/automatizacion_monitor.png';
 
-interface Blog {
-	id: number;
-	image: string;
-	title: string;
-	description: string;
-}
-
-export const blogs: Blog[] = [
-	{
-		id: 1,
-		image: Diseño,
-		title: 'Modelos de trabajo de Desarrollo de Software a la Medida: ¿Cuál es el Mejor para tu Proyecto?',
-		description: 'El desarrollo de software a la medida permite a las empresas mejorar, optimizar o crear nuevos productos para alcanzar sus objetivos. A continuación, explicaremos los modelos de trabajo más comunes y cuándo elegir cada uno.\n\nEn Coco Labs, hemos evaluado diferentes modelos de trabajo, desde con costo fijo hasta trabajo por horas, un aspecto que a menudo resulta confuso para los clientes. Este artículo te ayudará a entender cómo funcionan y a elegir el más adecuado para tu proyecto.\n\nDesde la creación de Coco Labs, nos encontramos en el dilema de escoger una metodología de trabajo para el desarrollo a la medida y mejorar la experiencia del cliente, sin sacrificar la calidad, la satisfacción del equipo y la innovación en los procesos. Encontrar un equilibrio entre el costo y el trabajo.',
-	},
-	{
-		id: 2,
-		image: Diseño,
-		title: 'Blog 2',
-		description: 'Description 2',
-	},
+export const blogPosts = [
+    {
+        id: 1,
+        image: arquitecturaImage,
+        title: "Arquitectura y consultoría de proyectos de software",
+        description: "Optimiza tu negocio con nuestras soluciones de consultoría y arquitectura de software. Diseñamos sistemas escalables, eficientes y personalizados para cubrir tus necesidades específicas.",
+        alt: "Arquitectura de software"
+    },
+    {
+        id: 2,
+        image: diseñoImage,
+        title: "Diseño de aplicaciones web o móvil",
+        description: "En Coco Labs creamos soluciones digitales a medida para optimizar procesos y mejorar la experiencia del usuario. Desarrollamos aplicaciones web intuitivas, accesibles desde cualquier lugar y diseñadas para ser duraderas y fáciles de mantener.",
+        alt: "Diseño de aplicaciones"
+    },
+    {
+        id: 3,
+        image: integracionImage,
+        title: "Integración de sistemas de software",
+        description: "Conecta tus plataformas y optimiza tus operaciones con nuestras soluciones de integración de sistemas de software. Integramos aplicaciones, bases de datos y herramientas empresariales para garantizar un flujo de información eficiente y sin interrupciones.",
+        alt: "Integración de sistemas"
+    },
+    {
+        id: 4,
+        image: automatizacionImage,
+        title: "Automatización de procesos por medio de soluciones",
+        description: "Optimiza tiempos, reduce costos y elimina errores con nuestras soluciones de automatización de procesos. Diseñamos sistemas personalizados para agilizar tareas repetitivas y mejorar la eficiencia operativa de tu empresa.",
+        alt: "Automatización de procesos"
+    }
 ];

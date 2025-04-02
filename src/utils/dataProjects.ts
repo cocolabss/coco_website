@@ -1,43 +1,54 @@
+import garcesReyesLogo from '../assets/images/projects/garcesReyes/casos_garcesreyes_portfolio.png';
+import laborUsLogo from '../assets/images/projects/laborUs/casos_laborus_portfolio.png';
+
 export interface ProjectType {
-	id: number;
-	title: string;
-	category: string;
-	description: string;
-	logo: string;
-	images: string[];
+    id: number;
+    title: string;
+    shortDescription?: string;
+    description: string;
+    category: string;
+    technologies: string[];
+    logo: string;
+    images?: string[];
+    client?: string;
+    year?: string;
+    challenge?: string;
+    solution?: string;
+    results?: string;
+    url?: string;
 }
 
 export const projects: ProjectType[] = [
-	{
-		id: 1,
-		title: 'Proyecto App',
-		category: 'App',
-		description: 'Descripción del proyecto App.',
-		logo: 'url-del-logo',
-		images: ['url-imagen-1', 'url-imagen-2', 'url-imagen-3'],
-	},
-	{
-		id: 2,
-		title: 'Proyecto Web',
-		category: 'Web',
-		description: 'Descripción del proyecto Web.',
-		logo: 'url-del-logo',
-		images: ['url-imagen-1', 'url-imagen-2', 'url-imagen-3'],
-	},
-	{
-		id: 3,
-		title: 'Proyecto App 2',
-		category: 'App',
-		description: 'Descripción del proyecto App 2.',
-		logo: 'url-del-logo',
-		images: ['url-imagen-1', 'url-imagen-2', 'url-imagen-3'],
-	},
-	{
-		id: 4,
-		title: 'Proyecto Web 2',
-		category: 'Web',
-		description: 'Descripción del proyecto Web 2.',
-		logo: 'url-del-logo',
-		images: ['url-imagen-1', 'url-imagen-2', 'url-imagen-3'],
-	},
+    {
+        id: 1,
+        title: "Garcés Reyes SAS",
+        shortDescription: "Breve descripción para la vista de lista...",
+        description: "Descripción completa del proyecto...",
+        category: "Web",
+        technologies: ["Zeplin", "Microsoft .Net", "XCode", "Swift"],
+        logo: garcesReyesLogo,
+        images: [],
+        client: "Cliente XYZ",
+        year: "2023",
+        challenge: "Desafío que enfrentó el cliente...",
+        solution: "Cómo lo resolvimos...",
+        results: "Resultados obtenidos...",
+        url: "https://www.garcesreyes.com/"
+    },
+    {
+        id: 2,
+        title: "LaborUs.co",
+        shortDescription: "Breve descripción para la vista de lista...",
+        description: "Descripción completa del proyecto...",
+        category: "Web",
+        technologies: ["Zeplin", "Microsoft .Net", "XCode", "Swift"],
+        logo: laborUsLogo,
+        images: [],
+        client: "Cliente XYZ",
+        year: "2023",
+        challenge: "Desafío que enfrentó el cliente...",
+        solution: "Cómo lo resolvimos...",
+        results: "Resultados obtenidos...",
+        url: "https://laborus.co/"
+    },
 ];
