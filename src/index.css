@@ -5,31 +5,31 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #835730;
+	background-color: #835730;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ae9076;
+	background: #ae9076;
 }
 
 .scrollbar-teal::-webkit-scrollbar {
-  width: 12px;
+	width: 12px;
 }
 
 .scrollbar-teal::-webkit-scrollbar-track {
-  background: #8cdce2;
+	background: #8cdce2;
 }
 
 .scrollbar-teal::-webkit-scrollbar-thumb {
-  background: #a28164;
+	background: #a28164;
 }
 
 .scrollbar-teal::-webkit-scrollbar-thumb:hover {
-  background: #8cdce2;
+	background: #8cdce2;
 }
 
 .background-image-1,
@@ -38,8 +38,8 @@
 .background-image-4,
 .background-image-5,
 .background-image-6 {
-  background-repeat: no-repeat;
-  padding: 20px;
+	background-repeat: no-repeat;
+	padding: 20px;
 }
 
 .background-image-2,
@@ -47,59 +47,223 @@
 .background-image-4,
 .background-image-5,
 .background-image-6 {
-  background-size: cover;
-  background-position: left center;
+	background-size: cover;
+	background-position: left center;
 }
 
 .background-image-1 {
-  background-size: contain;
-  background-position: center;
+	background-size: contain;
+	background-position: center;
 }
 
 .background-image-1, .background-image-2 {
-  background-image: url('./assets/images/bg_teal_1.png');
+	background-image: url('./assets/images/bg_teal_1.png');
 }
 
 .background-image-3 {
-  background-image: url('./assets/images/bg_brown_1.png');
+	background-image: url('./assets/images/bg_brown_1.png');
 }
 
 .background-image-4 {
-  background-image: url('./assets/images/bg_brown_2.png');
+	background-image: url('./assets/images/bg_brown_2.png');
 }
 
 .background-image-5 {
-  background-image: url('./assets/images/bg_teal_2.png');
+	background-image: url('./assets/images/bg_teal_2.png');
 }
 
 .background-image-6 {
-  background-image: url('./assets/images/bg_teal_3.png');
+	background-image: url('./assets/images/bg_teal_3.png');
 }
 
-.photo-container {
-  margin-bottom: -200px;
+/* ANIMACIONES DE LAS TARJETAS */
+
+.flip-card {
+	perspective: 1000px;
+	position: relative;
 }
 
-.step-card {
-  position: relative;
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
 }
 
-.step-card:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  top: 50%;
-  right: -40px;
-  transform: translateY(-50%);
-  color: #8B4513;
-  font-size: 2rem;
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
 }
 
-@media (max-width:768px) {
-  .step-card:not(:last-child)::after {
-    content: '↓';
-    right: 50%;
-    top: auto;
-    bottom: -45px;
-    transform: translateX(50%);
-  }
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.flip-card-back {
+	transform: rotateY(180deg);
+}
+
+.perspective {
+	perspective: 1000px;
+}
+
+.preserve-3d {
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.backface-hidden {
+	backface-visibility: hidden;
+}
+
+.my-rotate-y-180 {
+	transform: rotateY(180deg);
+}
+
+.group:hover .preserve-3d {
+	transform: rotateY(180deg);
+}
+
+@keyframes dropdownSlideDown {
+	from {
+		max-height: 0;
+		opacity: 0;
+	}
+	
+	to {
+		max-height: 500px;
+		opacity: 1;
+	}
+}
+
+@keyframes dropdownLine {
+	from {
+		height: 0;
+	}
+	
+	to {
+		height: 100%;
+	}
+}
+
+@keyframes dropdownItemFadeIn {
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* ANIMACIÓNES DEL TIMELINE */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fadeInVisible {
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes timelineLine {
+	from {
+		height: 0;
+	}
+	
+	to {
+		height: 100%;
+	}
+}
+
+.animate-timelineLine {
+	animation: timelineLine 1.5s ease-out forwards;
+}
+
+@keyframes timelineGrow {
+	from {
+		width: 0;
+	}
+	
+	to {
+		width: 100%;
+	}
+}
+
+.animate-timelineGrow {
+	animation: timelineGrow 0.8s ease-out forwards;
+}
+
+@keyframes timelineGrowVertical {
+	from {
+		height: 0;
+	}
+	
+	to {
+		height: 100%;
+	}
+}
+
+.animate-timelineGrowVertical {
+	animation: timelineGrowVertical 0.8s ease-out forwards;
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+	
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	
+	70% {
+		transform: scale(0.9);
+	}
+	
+	100% {
+		transform: scale(1);
+	}
+}
+
+.animate-bounceIn {
+	animation: bounceIn 0.8s ease-out forwards;
+}
+
+.timeline-item {
+	transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+	transform: scale(1.02);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+	0%, 100% {
+		opacity: 1;
+	}
+	
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.animate-pulse {
+	animation: pulse 2s infinite;
 }
