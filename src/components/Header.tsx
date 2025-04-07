@@ -3,7 +3,8 @@ import { routeTexts } from '../utils/dataRouteTexts';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./Navbar";
 import Button from '../components/Button';
-import BannerHome from '../assets/images/banner_home.png';
+import BannerHomeImage from '../assets/images/banner_home.png';
+import BannerHomeVideo from '../assets/videos/banner_home.mp4';
 import React from 'react';
 
 const fadeInUp = {
@@ -114,11 +115,26 @@ const Header = () => {
 
             <header className="relative">
                 {currentRoute === '/' ? (
-                    <div
-                        className="pt-[35rem] pb-12 px-6 md:px-24 flex row justify-evenly items-center bg-cover bg-center"
-                        style={{ backgroundImage: `url(${BannerHome})` }}
-                    >
-                        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-start text-center md:text-start bg-black bg-opacity-50 px-6 md:px-48">
+                    <div className="relative w-full h-screen min-h-[35rem] pb-12 px-6 md:px-24 flex justify-evenly items-center overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full z-0">
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                disablePictureInPicture
+                                className="w-full h-full object-cover"
+                                poster={BannerHomeImage}
+                            >
+                                <source src={BannerHomeVideo} type="video/mp4" />
+                                <source src={BannerHomeVideo.replace('.mp4', '.webm')} type="video/webm" />
+                                <img src={BannerHomeImage} alt="Banner de fondo" className="w-full h-full object-cover" />
+                            </video>
+                        </div>
+
+                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+                        <div className="relative z-20 w-full flex flex-col justify-center items-center md:items-start text-center md:text-start px-6 md:px-48">
                             <AnimatePresence>
                                 <AnimatedText
                                     text={title}

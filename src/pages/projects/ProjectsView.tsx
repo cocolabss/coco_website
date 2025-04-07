@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MainLayout from "../../components/MainLayout";
@@ -8,18 +9,54 @@ import { projects } from "../../utils/dataProjects";
 
 const ProjectsView = () => {
     const navigate = useNavigate();
+    const [activeFilter, setActiveFilter] = useState('Todos');
+    const [currentPage, setCurrentPage] = useState(1);
+    const projectsPerPage = 3;
+
+    const allCategories = ['Todos', ...new Set(projects.flatMap(project => project.category || []))];
+
+    const filteredProjects = activeFilter === 'Todos'
+        ? projects
+        : projects.filter(project =>
+            project.category?.includes(activeFilter)
+        );
+
+    const indexOfLastProject = currentPage * projectsPerPage;
+    const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+    const currentProjects = filteredProjects.slice(indexOfFirstProject, indexOfLastProject);
+    const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
     const handleProjectClick = (projectId: number) => {
         navigate(`/projects/${projectId}`);
     };
 
+    const handleFilterClick = (filter: string) => {
+        setActiveFilter(filter);
+        setCurrentPage(1);
+    };
+
     return (
         <MainLayout>
             <section id="projects" className="container mx-auto">
-                {projects.map((project, index) => (
+                <div className="flex flex-wrap justify-center gap-4 mt-12 px-6 md:px-24">
+                    {allCategories.map((category) => (
+                        <button
+                            key={category}
+                            className={`px-6 py-3 font-bold shadow-md shadow-gray-300 hover:shadow-lg transition-all
+                                ${activeFilter === category
+                                    ? 'bg-blue text-white'
+                                    : 'bg-white text-blue hover:bg-blue hover:text-white'}`}
+                            onClick={() => handleFilterClick(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+
+                {currentProjects.map((project, index) => (
                     <div
                         key={project.id}
-                        className={`py-16 px-6 md:px-24 ${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}`}
+                        className="py-16 px-6 md:px-24"
                     >
                         <div className={`max-w-6xl mx-auto ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex flex-col gap-8 md:gap-16 items-center`}>
                             <div className="w-full md:w-1/2">
@@ -53,6 +90,23 @@ const ProjectsView = () => {
                         </div>
                     </div>
                 ))}
+
+                {totalPages > 1 && (
+                    <div className="flex justify-center gap-2 my-8">
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <button
+                                key={page}
+                                className={`w-10 h-10 rounded-full flex items-center justify-center
+                                    ${currentPage === page
+                                        ? 'bg-blue text-white'
+                                        : 'bg-white text-blue hover:bg-blue hover:text-white'}`}
+                                onClick={() => setCurrentPage(page)}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                    </div>
+                )}
             </section>
 
             <Blog />
