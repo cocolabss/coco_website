@@ -2,12 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { routeTexts } from '../utils/dataRouteTexts';
 import {
-    FaSearch,
     FaUser,
     FaChevronDown,
     FaChevronUp,
-    FaTimes,
-    FaBars
 } from 'react-icons/fa';
 
 import LogoWhite from "../assets/images/logo_white.png";
@@ -21,7 +18,6 @@ const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [navbarClass, setNavbarClass] = useState("bg-transparent py-2");
     const [searchOpen, setSearchOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -58,9 +54,6 @@ const Navbar = () => {
         };
     }, [isDropdownOpen, scrolled, location.pathname]);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
 
     const handleDropdownEnter = (menuItem: string) => {
         if (menuItem === "Servicios") {
@@ -71,22 +64,6 @@ const Navbar = () => {
 
     const handleMobileDropdown = (menuItem: string) => {
         setActiveDropdown(activeDropdown === menuItem ? null : menuItem);
-    };
-
-    const toggleSearch = () => {
-        setSearchOpen(!searchOpen);
-        if (!searchOpen) {
-            setTimeout(() => {
-                const searchInput = document.getElementById("search-input");
-                searchInput?.focus();
-            }, 100);
-        }
-    };
-
-    const handleSearchSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setSearchQuery("");
-        setSearchOpen(false);
     };
 
     useEffect(() => {
@@ -320,40 +297,6 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-
-                        {/* Botón de búsqueda desktop */}
-                        <button
-                            onClick={toggleSearch}
-                            className={`ml-8 ${isDropdownOpen ? 'text-white'
-                                : scrolled ? 'text-brown'
-                                    : currentRoute === '/' ? 'text-white'
-                                        : 'text-brown'
-                                } hover:opacity-75 transition-opacity`}
-                        >
-                            <FaSearch />
-                        </button>
-                    </div>
-
-                    {/* Menú móvil - Botones */}
-                    <div className="flex md:hidden items-center space-x-4">
-                        <button
-                            onClick={toggleSearch}
-                            className={`${scrolled ? 'text-brown'
-                                : currentRoute === '/' ? 'text-white'
-                                    : 'text-brown'
-                                }`}
-                        >
-                            <FaSearch size={20} />
-                        </button>
-                        <button
-                            onClick={toggleMenu}
-                            className={`${scrolled ? 'text-brown'
-                                : currentRoute === '/' ? 'text-white'
-                                    : 'text-brown'
-                                } text-2xl focus:outline-none`}
-                        >
-                            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                        </button>
                     </div>
                 </div>
             </div>
@@ -465,41 +408,6 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-
-            {/* Búsqueda */}
-            {searchOpen && (
-                <div className="fixed inset-0 bg-white z-50 transform transition-all duration-300 ease-in-out translate-x-0">
-                    <div className="container mx-auto px-4 py-4">
-                        <div className="flex justify-between items-center mb-8">
-                            <a href="/" className="z-50">
-                                <img src={LogoBrown} alt="Logo" className="h-10" />
-                            </a>
-                            <button
-                                onClick={toggleSearch}
-                                className="text-gray-600 hover:text-gray-800 text-2xl"
-                            >
-                                <FaTimes size={24} />
-                            </button>
-                        </div>
-                        <form onSubmit={handleSearchSubmit} className="relative">
-                            <input
-                                id="search-input"
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Buscar..."
-                                className="w-full border-b-2 border-gray-300 py-4 text-2xl focus:outline-none focus:border-blue-500"
-                            />
-                            <button
-                                type="submit"
-                                className="absolute right-0 bottom-4 text-gray-500 hover:text-blue-500"
-                            >
-                                <FaSearch size={24} />
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            )}
         </nav>
     );
 };
